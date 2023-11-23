@@ -1,0 +1,93 @@
+# Dart Basics
+
+Dart is a programming language developed by Google and designed by Lars Bak and Kasper Lund. It's main purpose is web and mobile apps applications. It isn't restricted to that, it can also be used to program server and desktop applications.
+
+Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. It can compile to machine code, JavaScript, or WebAssembly. It supports interfaces, mixins, abstract classes, reified generics and type inference.
+
+## From Dart to Machine Code
+
+Dart code isn't natively compiled and interpreted by iOS, Android, Web, etc. Instead, dart *parses the code from top to bottom when running a project for a targeted platform. After parsing the code, Dart and Flutter tools compile the code into native iOS and Android machine code that is then executed on the targeted platform.
+
+(*parse: analyzing and converting a program into an internal format that a runtime environment can actually run)
+
+## Dart Functions
+
+There is a key instruction needed to start programming flutter apps:
+
+~~~dart
+runApp();
+~~~
+
+The code above consists of a function. The usage of functions is a baseline of programming, they are instructions, packed as a unit, that perform a specific task. A way of thinking of functions is *code on demand*.
+
+The ***runApp()*** function is provided by the flutter framework, and it is used to primarily show user interface on the screen.
+
+## Importing Features From Packages
+
+Packages likewise functions are a baseline of programming. Packages are namespaces that organize a set of related classes and/or interfaces. Importing a package allows the usage of functions and classes that are not native to the code, it can also be used to use third party functions and classes.
+
+~~~Dart
+import 'package:flutter/material.dart';
+
+int main(){
+    runApp({widget_name});
+}
+~~~
+
+For instance, to run the ***runApp()*** function mentioned above, we first need to import the *'material.dart'* file from *'packages:flutter/'*.
+
+## Widgets
+
+Flutter is built with dart, but more specifically, we use dart to program so called ***widgets***. Widgets are immutable descriptions of part of a user interface.
+
+A flutter app is built using a combination of \*nested flutter widgets, or a ***widget tree***. When using the ***runApp()***, we pass the root of the widget tree as an argument for the function.
+
+Flutter provides many built-in widgets, such as buttons, form inputs, layout widgets, etc. But they can also be built by the dev, using the built-in as a base.
+
+Flutter has a [website](https://docs.flutter.dev/ui/widgets) with a catalog of widgets that are available.
+
+One of the most basic widgets, that will give a visual interface when passed as an argument int the ***runApp()*** function is the ***MaterialApp()***.
+
+~~~Dart
+import 'package:flutter/material.dart';
+
+int main(){
+    runApp(MaterialApp());
+}
+~~~
+
+Unlike the function it is being passed to as an argument, the ***MaterialApp()*** is a *class, or a construction function of a class (to be more precise). This is a core widget, that is used in most flutter apps. It does a lot of behind the scenes work for the user interface
+
+(*nested: placed one inside the other)
+
+(*class: classes are a Dart feature that can be used to build more complex data structures - like widgets.)
+
+## "const" Values
+
+const is a keyword built into the dart language that helps optimizing runtime performance. It does so because it prevents the reallocation of memory for a piece of code that doesn't change.
+
+When a variable is declared in a programming language, it's value is stored in the memory of the computer. When the code accesses that bit of code again, it usually allocates another part of the computer's memory for that code. When we use the "const" keyword, it stops the computer from allocating another part of the memory for the code that follows it.
+
+## Trailing comma
+
+When writing flutter code, every time a parenthesis is closed, it is a good practice to place a trailing comma.
+
+A trailing comma is when a comma is put after the end of an argument. This is done so that it is easier to add code later. In the case of flutter, this is done so that the formatting of the file can be done by the code editor, making the code more readable.
+
+Before:
+
+<p align="center">
+    <img src = "./images/image_1.png"/>
+</p>
+
+After:
+
+<p align="center">
+    <img src = "./images/image_2.png"/>
+</p>
+
+## Unserstanding types
+
+Flutter like other programming languages is a type-safe language. All values are of certain types, more than one type is possible and common. In flutter, all values are at least of type Object.
+
+Types can be built in, provided by flutter, third party, imported by packages, or custom types, created by the dev.
