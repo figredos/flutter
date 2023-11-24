@@ -102,10 +102,12 @@ Types can be built in, provided by flutter, third party, imported by packages, o
 
 ## Formatting
 
-When writing in dart, ***PascalCase*** should be prioritized.
+When writing in dart, ***PascalCase*** should be prioritized, when using names with two words for naming classes. When naming other variables ***camelCase*** should be used.
 
 ~~~dart
 PascalCase
+
+camelCase
 ~~~
 
 Words in this format should not be separated with whitespace or underscore, instead, we start every word inside a name with a capital letter.
