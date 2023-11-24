@@ -62,11 +62,19 @@ Unlike the function it is being passed to as an argument, the ***MaterialApp()**
 
 (*class: classes are a Dart feature that can be used to build more complex data structures - like widgets.)
 
-## "const" Values
+## const and final
 
-const is a keyword built into the dart language that helps optimizing runtime performance. It does so because it prevents the reallocation of memory for a piece of code that doesn't change.
+There are two keyword that indicate the immutability of a code, ***const*** and ***final***. The difference between the two is that const is more restrictive and is used for compile-time constant whereas finalis used for values that might be determined at runtime, but won't change after initialization. Final allows for more flexibility in terms of when and how the value is determined, making it suitable for a wider range of use cases compared to const
+
+### "const" Values
+
+***const*** is a keyword built into the dart language that helps optimizing runtime performance. It does so because it prevents the reallocation of memory for a piece of code that doesn't change.
 
 When a variable is declared in a programming language, it's value is stored in the memory of the computer. When the code accesses that bit of code again, it usually allocates another part of the computer's memory for that code. When we use the "const" keyword, it stops the computer from allocating another part of the memory for the code that follows it.
+
+### "final" Values
+
+In dart, the ***final*** keyword is used to declare that can be assigned a value only once. Once a value is assigned to a ***final*** variable, it cannot be changed. This keyword is often used for constants, configuration values, or variables that should not e reassigned during the runtime of the program.
 
 ## Trailing comma
 
@@ -91,3 +99,15 @@ After:
 Flutter like other programming languages is a type-safe language. All values are of certain types, more than one type is possible and common. In flutter, all values are at least of type Object.
 
 Types can be built in, provided by flutter, third party, imported by packages, or custom types, created by the dev.
+
+## Formatting
+
+When writing in dart, ***PascalCase*** should be prioritized.
+
+~~~dart
+PascalCase
+~~~
+
+Words in this format should not be separated with whitespace or underscore, instead, we start every word inside a name with a capital letter.
+
+Another formatting standard that should be followed is how to name objects. When naming an object, the intention should be, making it as clear as possible what that object does.
