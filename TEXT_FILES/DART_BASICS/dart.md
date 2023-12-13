@@ -113,3 +113,17 @@ camelCase
 Words in this format should not be separated with whitespace or underscore, instead, we start every word inside a name with a capital letter.
 
 Another formatting standard that should be followed is how to name objects. When naming an object, the intention should be, making it as clear as possible what that object does.
+
+## Operators
+
+Dart like any other programming language has a set of operators of its own. Here are some of the most notable ones.
+
+### ...
+
+... or spread, is a convenient syntax feature that allows the easy unpacking of the elements in a collection (lists and sets) or the key-value pair of a map into another collection or function call. The spread operator is useful for combining or spreading the contents of one iterable into another:
+
+~~~dart
+List<int> list1 = [1, 2, 3];
+List<int> list2 = [list1, 4, 5]; //[[1, 2, 3], 4, 5]
+List<int> list3 = [...list1, 4, 5]; //[1, 2, 3, 4, 5]
+~~~

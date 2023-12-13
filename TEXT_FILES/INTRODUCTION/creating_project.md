@@ -43,3 +43,11 @@ To run a flutter project, start the device in the virtual device manager, then w
 ~~~
 
 This will compile the code and run it in the emulator.
+
+## Downloading Packages
+
+Flutter allows devs to use and distribute third-party packages. Being third party, they do not always come pre-installed, and so they need to be manually installed. To do this, run the following line of command:
+
+~~~shell
+.\flutter> flutter pub add {package_name}
+~~~

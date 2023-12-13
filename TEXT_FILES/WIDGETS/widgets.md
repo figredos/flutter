@@ -1,5 +1,15 @@
 # Widgets
 
+[Configuring Widgets](#configuring-widgets)
+
+[Creating Widgets](#creating-a-widget)
+
+[Constructors](#constructors)
+
+[Stateless Widgets and Stateful Widgets](#statelesswidget-and-statefulwidget)
+
+[State Class](#state-class)
+
 Widgets are the basic structure in Flutter. These structures are basic building blocs of the user interface, and form the fundamental structure of an app.
 
 They are used to construct the visual elements of the app, and can range from simple components to more complex ones.
@@ -75,7 +85,7 @@ A ***StateLessWidget*** is a widget that does not change its internal state once
 
 This widget does not have mutable properties or fields, and therefore it has no mutable state. It is also immutable, meaning, once a StateLessWidget is created, its properties cannot be changed.
 
-#### Implementation
+#### Implementing StateLessWidgets
 
 As aforementioned, ***StateLessWidget*** are abstract classes, and require the implementation of the ***build()*** method like so:
 
@@ -93,7 +103,7 @@ A ***StatefulWidget*** is a widget that can change its internal state during its
 
 StateFulWidgets have a mutable state, with mutable properties or fields that can change over time. It can react to changes in state, such as user input or other events.
 
-#### Implementation
+#### Implementing StateFulWidgets
 
 To implement StateFulWidgets, thing get a little bit different. StateFulWidgets are also abstract classes, and unlike the *build()* method required by ***StateLessWidgets***, this widget requires the implementation of the ***createState()*** method. This method returns a *State* object. State is a type built into flutter, and like *list*, this configures a generic type value. Hence we need to add *'<>'* to "inform" flutter what type of State will be managed. In the case of StateFulWidgets, the type of state should be the name of the class. 
 
@@ -110,15 +120,16 @@ You may have noticed the presence of "***_MyClassState***" as the return widget 
 
 ~~~dart
 class MyClass extends StateFulWidget {
+    MyClass({super.key})
     @override
     State<MyClass> createState(){
-        return _MyClassState;
+        return _MyClassState();
     }
 }
 
 class _MyClassState extends State<MyClass> {
     @override
-    Widget build() {
+    Widget build(context) {s
         return;
     }
 }
@@ -126,7 +137,34 @@ class _MyClassState extends State<MyClass> {
 
 Flutter requires both of the structures to implement a ***StateFullWidget***.
 
-## setState()
+### Widget lifecycle
+
+Every Flutter Widget has a built-in lifecycle. In other words, every widget gas a collection of methods thar are automatically executed at certain points of time in flutter.
+
+Of these methods, there are three that are extremely important (stateful) widgets methods:
+
+- *initState()*: Executed by flutter when the StatefulWidget's State object is initialized.
+- *build()* Executed by flutter when the widget is built for the first time and after setState() is called.
+- *dispose()* Executed by flutter just before the widget is deleted
+  
+
+### initState method
+
+The initState method is a lifecycle method part of the State class. It is the appropriate place to perform one time initialization tasks for the stateful widget.
+
+It is usually used to initialize variables, subscribing to streams or any task that should happen only once in the lifecycle of the widget.
+
+This method is only called once in the lifecycle of a State Object. If the widget is removed from the tree and reinserted, initState will not execute again.
+
+## State class
+
+The State class is a fundamental part of the Flutter Framework's stateful widget system.
+
+### widget
+
+The State class provides a property called widget. It refers to the corresponding stateful widget that the state is associated with. This property allows the state class to access the properties and configuration of the stateful widget to which it belongs.
+
+### setState()
 
 The ***setState()*** function is a crucial method provided by the *State* class. It is used in ***StateFulWidget*** instances to signal that the internal state of the widget has changed and that the framework should rebuild the widget. 
 

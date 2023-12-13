@@ -8,8 +8,6 @@ A summary of the most common widgets, their uses and some commentary.
 
 [Material Design Widgets](#material-design-widgets)
 
-[Decorative / Styling Widgets](#decorative--layout-widgets)
-
 [Image related Widgets](#image-related-widgets)
 
 [Button Widgets](#button-widgets)
@@ -40,6 +38,30 @@ The column widget is used to arrange its children widgets vertically in a single
 
 This Widget is used to arrange its children widgets horizontally in a single row. It is part of the layout widgets and is commonly used when you want to create a horizontal arrangement of widgets, such as buttons, text or other elements.
 
+### Expanded
+
+This widget is used to give a child widget the flexibility to occupy all available space along the main axis with a parent widget that uses a flex-based layout such as 'Column' or 'Row'
+
+### Container
+
+This is a basic layout element that can contain other widgets and provide various visual customization options. ***Container*** can be used to create basic or complex layouts.
+
+### SizedBox
+
+The main purpose of SizedBox is to control the size (width, height) of its child widget, or to create space within a layout.
+
+#### double.infinity
+
+When double.infinity is used either as the height or the width, it essentially instructs flutter to use the maximum number of pixels available.
+
+### Scrollable Widgets
+
+Scrollable widgets are a family of widgets that enable scrolling behavior allowing users to view content that extends beyond the visible area of the screen. These widgets are crucial for handling scenarios where the available space is not sufficient to display all content, and users need to scroll to see more.
+
+#### SingleChildScrollView
+
+This widget is used to create a scrollable view containing a single child. it allows the child to be scrolled if its content exceeds the dimensions of the viewport.
+
 ## Text and Styling Widgets
 
 ### Text
@@ -50,17 +72,15 @@ It allows stylization anf formatting of the text in various ways, such as changi
 
 The only possible type for this widget is string.
 
+### Opacity
+
+This widget controls the transparency or opacity of its child widget. It modifies the alpha channel of the child's color, making it more or less transparent. The opacity widget is primarily sed for controlling the visibility of its child by adjusting its transparency level.
+
 ## Material Design Widgets
 
 ### MaterialApp
 
 The ***MaterialApp*** widget is a fundamental component that sets up the basic structure aof a Material Design-themed application. It provides a wrapper for the entire app, and includes configurations for various aspects of the app, such as navigation, theming and title.
-
-## Decorative / Layout Widgets
-
-### Container
-
-This is a basic layout element that can contain other widgets and provide various visual customization options. ***Container*** can be used to create basic or complex layouts.
 
 ## Image related Widgets
 
@@ -107,3 +127,8 @@ This is a button that consists only of an icon. It is often used that are repres
 ### FloatingActionButton
 
 This is a circular material design button typically used for the primary action in an application.
+
+### .icon
+
+
+
