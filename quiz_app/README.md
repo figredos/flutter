@@ -1,16 +1,17 @@
 # quiz_app
 
-A new Flutter project.
+Flutter app that provides a quiz about flutter features.
 
-## Getting Started
+<p align="center">
+    <img src="./assets/quiz_app.gif" height=350>
+</p>
 
-This project is a starting point for a Flutter application.
+## Development reasons
 
-A few resources to get you started if this is your first Flutter project:
+This app was developed for understanding some advanced dart and Flutter basics.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+In this app, concepts like, multiple screens, usage of conditional statements, usage of data from Maps, usage of third party packages, passing data across Widgets via functions.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running the app
+
+To run this app, follow the instructions [in this file](../TEXT_FILES/INTRODUCTION/flutter_setup.md)
