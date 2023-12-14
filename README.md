@@ -6,13 +6,13 @@
 To run any of the apps, download the file with the corresponding name, launch a device emulator, navigate to the downloaded file in terminal (or copy its path) and run the following command:
 
 ~~~shell
-{path_to_downloaded_file} > flutter run
+flutter run
 ~~~
 
 or 
 
 ~~~shell
-{home} > flutter run {path_of_downloaded_file}
+flutter run {path_of_downloaded_file}
 ~~~
 
 ## Apps 
