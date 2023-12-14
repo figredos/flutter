@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://storage.googleapis.com/cms-storage-bucket/683514c5660dbe52f5ba.png" height=100>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" height=100>
 </p>
 
 # Flutter
