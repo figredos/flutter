@@ -146,7 +146,6 @@ Of these methods, there are three that are extremely important (stateful) widget
 - *initState()*: Executed by flutter when the StatefulWidget's State object is initialized.
 - *build()* Executed by flutter when the widget is built for the first time and after setState() is called.
 - *dispose()* Executed by flutter just before the widget is deleted
-  
 
 ### initState method
 
