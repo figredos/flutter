@@ -15,3 +15,4 @@ In this app, concepts like, multiple screens, usage of conditional statements, u
 ## Running the app
 
 To run this app, follow the instructions [in this file](../TEXT_FILES/INTRODUCTION/flutter_setup.md)
+
