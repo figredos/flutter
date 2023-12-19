@@ -12,38 +12,50 @@ Breakpoints are a debugging feature used by developers to pause the execution of
 
 The flutter DevTools are a suite of performance and debugging tools for Flutter developers. It provides a set of visual and command-line tools that help developers analyze, diagnose, and optimize their flutter applications. DevTools can be used during the development and debugging process to gain insights into the app's performance, identify potential issues, and streamline the development of workflow.
 
-To use the Flutter DevTools run a project and click the button on the run bar in vscode:
+### Opening the Flutter DevTools
+
+To use the Flutter DevTools run a project and click the rightmost button on the run bar in vscode:
 
 <p align="center">
-    <img src = ˜/images/image_1.png˜/>
+    <img src="images/image_1.png" height=50px/>
 </p>
+
+The other option is to open the *Command palette* (on mac shift + command + p, on windows control + shift + p) and write Flutter DevTools to open them:
+
+<p align="center">
+    <img src="images/image_2.png" height=90px/>
+</p>
+
+Press enter and open the DevTools on the Browser (it opens on Google Chrome by default).
+
+### DevTools key features
 
 Some of it's key features and components are the following:
 
-### Flutter inspector
+#### Flutter inspector
 
 The flutter inspector is a visual tool that allows developers to inspect the widget tree, explore widget properties, and see how widgets are rendered on the screen. It helps in understanding the widget hierarchy and diagnosing UI-related issues.
 
-### Timeline View
+#### Timeline View
 
 The timeline view provides a timeline of events that occur during the execution of a Flutter app. Developers can use this tool to analyze how the app utilizes resources over time.
 
-### Memory view
+#### Memory view
 
 The Memory view in DevTools allows developers to analyze the memory usage of their flutter app. It provides insights into memory allocations, helps identify memory leaks, and offers tools for optimizing memory usage.
 
-### Performance overlay
+#### Performance overlay
 
 DevTools includes a performance overlay that can be overlaid on the app during development. This overlay displays information such as frames per second (FPS) and helps developers identify performance issues in real-time.
 
-### Dart Devtools Integration
+#### Dart Devtools Integration
 
 Dart DevTools is integrated into the Flutter DevTools suite. Dart DevTools provides additional tools for debugging Dart code, include source-level debugging, variable inspection, and breakpoints.
 
-### Debugging and Hot Reload
+#### Debugging and Hot Reload
 
 DevTools integrates with Flutter's debugging and hor reload capabilities. Developers can set breakpoints, step trough code, and use hot reload to quickly apply code changes without restarting the entire application.
 
-### Command-Line Interface (CLI)
+#### Command-Line Interface (CLI)
 
 DevTools provides a command-line interface for users who prefer using the terminal. The CLI allows developers to start DevTools, configure it, and interact with it using text-based commands.
