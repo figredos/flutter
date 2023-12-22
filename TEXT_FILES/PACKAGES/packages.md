@@ -18,7 +18,7 @@ In dart, the 'uuid' package provides functionality to create UUIDs in different 
 
 For more information on UUIDs and its versions, follow [this link](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-### The .vn() methods
+### The Version methods
 
 In this package, there are different methods that represent different versions of UUIDs. Each version has a different algorithm for generating UUIDs and is suitable for specific use cases.
 
