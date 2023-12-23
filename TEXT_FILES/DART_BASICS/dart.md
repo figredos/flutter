@@ -5,14 +5,23 @@ Dart is a programming language developed by Google and designed by Lars Bak and 
 Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. It can compile to machine code, JavaScript, or WebAssembly. It supports interfaces, mixins, abstract classes, reified generics and type inference.
 
 -[From Dart to Machine Code](#from-dart-to-machine-code)
+
 -[Dart Functions](#dart-functions)
+
 -[Importing features](#importing-features-from-packages)
+
 -[Widgets](#widgets)
+
 -[Const and Final](#const-and-final)
+
 -[Trailing Comma](#trailing-comma)
+
 -[Understanding Types](#understanding-types)
+
 -[Formatting](#formatting)
+
 -[Operators](#operators)
+
 -[Enum](#enum)
 
 ## From Dart to Machine Code
