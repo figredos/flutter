@@ -138,7 +138,7 @@ Another formatting standard that should be followed is how to name objects. When
 
 Dart like any other programming language has a set of operators of its own. Here are some of the most notable ones.
 
-### ... (spread)
+### Spread (...)
 
 ... or spread, is a convenient syntax feature that allows the easy unpacking of the elements in a collection (lists and sets) or the key-value pair of a map into another collection or function call. The spread operator is useful for combining or spreading the contents of one iterable into another:
 
