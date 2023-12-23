@@ -4,6 +4,17 @@ Dart is a programming language developed by Google and designed by Lars Bak and 
 
 Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. It can compile to machine code, JavaScript, or WebAssembly. It supports interfaces, mixins, abstract classes, reified generics and type inference.
 
+-[From Dart to Machine Code](#from-dart-to-machine-code)
+-[Dart Functions](#dart-functions)
+-[Importing features](#importing-features-from-packages)
+-[Widgets](#widgets)
+-[Const and Final](#const-and-final)
+-[Trailing Comma](#trailing-comma)
+-[Understanding Types](#understanding-types)
+-[Formatting](#formatting)
+-[Operators](#operators)
+-[Enum](#enum)
+
 ## From Dart to Machine Code
 
 Dart code isn't natively compiled and interpreted by iOS, Android, Web, etc. Instead, dart *parses the code from top to bottom when running a project for a targeted platform. After parsing the code, Dart and Flutter tools compile the code into native iOS and Android machine code that is then executed on the targeted platform.
@@ -14,9 +25,9 @@ Dart code isn't natively compiled and interpreted by iOS, Android, Web, etc. Ins
 
 There is a key instruction needed to start programming flutter apps:
 
-~~~dart
+```dart
 runApp();
-~~~
+```
 
 The code above consists of a function. The usage of functions is a baseline of programming, they are instructions, packed as a unit, that perform a specific task. A way of thinking of functions is *code on demand*.
 
@@ -26,13 +37,13 @@ The ***runApp()*** function is provided by the flutter framework, and it is used
 
 Packages likewise functions are a baseline of programming. Packages are namespaces that organize a set of related classes and/or interfaces. Importing a package allows the usage of functions and classes that are not native to the code, it can also be used to use third party functions and classes.
 
-~~~Dart
+```Dart
 import 'package:flutter/material.dart';
 
 int main(){
     runApp({widget_name});
 }
-~~~
+```
 
 For instance, to run the ***runApp()*** function mentioned above, we first need to import the *'material.dart'* file from *'packages:flutter/'*.
 
@@ -48,13 +59,13 @@ Flutter has a [website](https://docs.flutter.dev/ui/widgets) with a catalog of w
 
 One of the most basic widgets, that will give a visual interface when passed as an argument int the ***runApp()*** function is the ***MaterialApp()***.
 
-~~~Dart
+```dart
 import 'package:flutter/material.dart';
 
 int main(){
     runApp(MaterialApp());
 }
-~~~
+```
 
 Unlike the function it is being passed to as an argument, the ***MaterialApp()*** is a *class, or a construction function of a class (to be more precise). This is a core widget, that is used in most flutter apps. It does a lot of behind the scenes work for the user interface
 
@@ -94,7 +105,7 @@ After:
     <img src = "./images/image_2.png"/>
 </p>
 
-## Unserstanding types
+## Understanding types
 
 Flutter like other programming languages is a type-safe language. All values are of certain types, more than one type is possible and common. In flutter, all values are at least of type Object.
 
@@ -104,11 +115,11 @@ Types can be built in, provided by flutter, third party, imported by packages, o
 
 When writing in dart, ***PascalCase*** should be prioritized, when using names with two words for naming classes. When naming other variables ***camelCase*** should be used.
 
-~~~dart
+```dart
 PascalCase
 
 camelCase
-~~~
+```
 
 Words in this format should not be separated with whitespace or underscore, instead, we start every word inside a name with a capital letter.
 
@@ -118,12 +129,27 @@ Another formatting standard that should be followed is how to name objects. When
 
 Dart like any other programming language has a set of operators of its own. Here are some of the most notable ones.
 
-### ...
+### ... (spread)
 
 ... or spread, is a convenient syntax feature that allows the easy unpacking of the elements in a collection (lists and sets) or the key-value pair of a map into another collection or function call. The spread operator is useful for combining or spreading the contents of one iterable into another:
 
-~~~dart
+```dart
 List<int> list1 = [1, 2, 3];
 List<int> list2 = [list1, 4, 5]; //[[1, 2, 3], 4, 5]
 List<int> list3 = [...list1, 4, 5]; //[1, 2, 3, 4, 5]
-~~~
+```
+
+## Enum
+
+In dart, an enumeration (enum) is a way to represent a fixed set of values as distinct named constants. Enumerations provide a way to define named values for a type, making the code more readable and expressive. Enumerations are commonly used to represent a set of related values or options.
+
+```dart
+enum Color {
+    red, 
+    green,
+    blue,
+    yellow,
+}
+```
+
+Dart enums are zero-indexed, so 'Color.red' has index 0, 'Color.green' has index 1 and so on. They are particularly useful when there is a fixed set of related values that are meant to be used together, and they help make the code more readable and maintainable.
