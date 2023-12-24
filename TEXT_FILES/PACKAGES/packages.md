@@ -3,8 +3,8 @@
 Here are some flutter packages used in this repo.
 
 - [Google Fonts](#google-fonts)
-
 - [UUID](#uuid)
+- [Appendix](#appendix)
 
 ## Google Fonts
 
@@ -48,6 +48,12 @@ Similar to version 3 but used the [SGA-1 hashing algorithm](#sha-1-hashing-algor
 var uuid = uuid();
 String sha1Uuid = uuid.v5(Uuid.NAMESPACE_URL, 'example.org');
 ```
+
+## intl
+
+The 'intl' package provides internationalization and localization support for flutter applications. Internationalization (i18n) involves adapting your app to work in different languages and regions, while localization (l10n) involves translating the app into specific languages.
+
+This package includes tools and classes for formatting dates, numbers and messages in a way that is culturally appropriate for different locales. It helps you create Flutter apps that are more accessible and user-friendly for people around the world.
 
 ## Appendix
 
