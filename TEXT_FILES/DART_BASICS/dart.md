@@ -4,25 +4,23 @@ Dart is a programming language developed by Google and designed by Lars Bak and 
 
 Dart is an object-oriented, class-based, garbage-collected language with C-style syntax. It can compile to machine code, JavaScript, or WebAssembly. It supports interfaces, mixins, abstract classes, reified generics and type inference.
 
--[From Dart to Machine Code](#from-dart-to-machine-code)
-
--[Dart Functions](#dart-functions)
-
--[Importing features](#importing-features-from-packages)
-
--[Widgets](#widgets)
-
--[Const and Final](#const-and-final)
-
--[Trailing Comma](#trailing-comma)
-
--[Understanding Types](#understanding-types)
-
--[Formatting](#formatting)
-
--[Operators](#operators)
-
--[Enum](#enum)
+- [Dart Basics](#dart-basics)
+  - [From Dart to Machine Code](#from-dart-to-machine-code)
+  - [Dart Functions](#dart-functions)
+  - [Importing Features From Packages](#importing-features-from-packages)
+  - [Widgets](#widgets)
+  - [const and final](#const-and-final)
+    - ["const" Values](#const-values)
+    - ["final" Values](#final-values)
+  - [Trailing comma](#trailing-comma)
+  - [Understanding types](#understanding-types)
+  - [Formatting](#formatting)
+  - [Operators](#operators)
+    - [Spread (...)](#spread-)
+  - [Enum](#enum)
+  - [Getters \& Setters](#getters--setters)
+    - [Getters](#getters)
+    - [Setters](#setters)
 
 ## From Dart to Machine Code
 
@@ -162,3 +160,79 @@ enum Color {
 ```
 
 Dart enums are zero-indexed, so 'Color.red' has index 0, 'Color.green' has index 1 and so on. They are particularly useful when there is a fixed set of related values that are meant to be used together, and they help make the code more readable and maintainable.
+
+## Getters & Setters
+
+Dart supports the usage of getters and setters.
+
+### Getters
+
+Getters are a way to provide access to the value of an object's property. They are a form of syntactic sugar that allows the definition of a method that looks like a property. The getter method is invoked when the property is accessed.
+
+```dart
+class MyClass {
+    // Private variable
+    String _myProperty;
+
+    // Getter method
+    String get myProperty {
+        // Additional logic if needed
+        return _myProperty;
+    }
+}
+
+void main() {
+    var myObject = MyClass();
+    print(myObject.myProperty); // Accessing the getter
+}
+```
+
+If there is no need for additional logic, there is a shorthand syntax:
+
+```dart
+class MyClass {
+    String _myProperty;
+
+    String get myProperty => _myProperty;
+}
+```
+
+### Setters
+
+Setters are used to provide a way to update the value of an object's property. Setters are similar to getters but are used for assigning values rather that retrieving them.
+
+```dart
+class MyClass {
+    //Private variable
+    String _myProperty;
+
+    //Getter method
+    String get myProperty => _myProperty;
+
+    // Setter method
+    set myProperty(String value) {
+        // Additional logic if needed
+        _myProperty = value;
+    }
+}
+
+void main() {
+    var myObject = MyClass();
+
+    // Using the setter
+    myObject.myProperty = 'New Value';
+    print(myObject.myProperty); // Accessing the getter
+}
+```
+
+Much like getters, setter have shorthand usage if there is no need for additional logic:
+
+```dart
+class MyClass {
+    String _myProperty;
+
+    String get myProperty => _myProperty;
+
+    String set myProperty(String value) => _myProperty = value;
+}
+```
