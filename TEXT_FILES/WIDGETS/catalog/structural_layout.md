@@ -8,6 +8,7 @@ Widgets that perform Structural and Layout in Flutter.
   - [Column](#column)
   - [Row](#row)
   - [Card](#card)
+  - [Padding](#padding)
   - [Spacer](#spacer)
   - [Expanded](#expanded)
   - [Container](#container)
@@ -40,6 +41,10 @@ This Widget is used to arrange its children widgets horizontally in a single row
 ## Card
 
 The card widget is used to create a material design card, which is a surface with a shadow to represent each piece of content. It's commonly used to present information in a visually appealing and organized way.
+
+## Padding
+
+In Flutter, the 'Padding' widget is used to apply padding to its child widget. Padding is the space between the edges of a widget and its content. The 'Padding' widget allows you to add space around a widget, adjusting its position within its parent widget.
 
 ## Spacer
 

@@ -2,10 +2,17 @@
 
 Here are some flutter packages used in this repo.
 
-- [Google Fonts](#google-fonts)
-- [UUID](#uuid)
-- [intl](#intl)
-- [Appendix](#appendix)
+- [Packages](#packages)
+  - [Google Fonts](#google-fonts)
+  - [UUID](#uuid)
+    - [The Version methods](#the-version-methods)
+      - [Version 1 (v1-Time-based)](#version-1-v1-time-based)
+      - [Version 4 (v4-Random)](#version-4-v4-random)
+      - [Version 5 (v5-Name-based SHA-1)](#version-5-v5-name-based-sha-1)
+  - [intl](#intl)
+  - [Appendix](#appendix)
+    - [MAC Address](#mac-address)
+    - [SHA-1 hashing algorithm](#sha-1-hashing-algorithm)
 
 ## Google Fonts
 

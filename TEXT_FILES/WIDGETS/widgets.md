@@ -1,18 +1,21 @@
 # Widgets
 
-[Configuring Widgets](#configuring-widgets)
+Widgets are the basic structure in Flutter. These structures are basic building blocs of the user interface, and form the fundamental structure of an app. They are used to construct the visual elements of the app, and can range from simple components to more complex ones.
 
-[Creating Widgets](#creating-a-widget)
-
-[Constructors](#constructors)
-
-[Stateless Widgets and Stateful Widgets](#statelesswidget-and-statefulwidget)
-
-[State Class](#state-class)
-
-Widgets are the basic structure in Flutter. These structures are basic building blocs of the user interface, and form the fundamental structure of an app.
-
-They are used to construct the visual elements of the app, and can range from simple components to more complex ones.
+- [Widgets](#widgets)
+  - [Configuring Widgets](#configuring-widgets)
+  - [Creating a Widget](#creating-a-widget)
+  - [Constructors](#constructors)
+  - [StateLessWidget and StatefulWidget](#statelesswidget-and-statefulwidget)
+    - [StateLessWidgets](#statelesswidgets)
+      - [Implementing StateLessWidgets](#implementing-statelesswidgets)
+    - [StateFullWidget](#statefullwidget)
+      - [Implementing StateFulWidgets](#implementing-statefulwidgets)
+    - [Widget lifecycle](#widget-lifecycle)
+    - [initState method](#initstate-method)
+  - [State class](#state-class)
+    - [widget](#widget)
+    - [setState()](#setstate)
 
 ## Configuring Widgets
 

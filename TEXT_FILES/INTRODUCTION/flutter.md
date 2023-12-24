@@ -1,5 +1,10 @@
 # Flutter
 
+- [Flutter](#flutter)
+  - [WHAT IS FLUTTER](#what-is-flutter)
+  - [FLUTTER USES DART](#flutter-uses-dart)
+  - [ONE CODEBASE MULTIPLE PLATFORMS](#one-codebase-multiple-platforms)
+
 ## WHAT IS FLUTTER
 
 Flutter is an UI Framework, meaning flutter is a collection of code packages and utility functions for writing cross platform app code. With flutter the developer is able to have a single codebase, and yet generate apps for a variety of platforms, such as Android, IOS, Windows, macOS, linux and web.

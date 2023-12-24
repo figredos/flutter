@@ -2,6 +2,19 @@
 
 Debugging is the process of finding and fixing errors or issues in software. It involves identifying and resolving problems in a program's code that cause unexpected behavior, errors or crashes. Debugging is an essential part of the software development lifecycle, and it helps developers ensure that their code works correctly and as intended.
 
+- [Debugging Flutter apps](#debugging-flutter-apps)
+  - [Debug mode](#debug-mode)
+  - [Flutter DevTools](#flutter-devtools)
+    - [Opening the Flutter DevTools](#opening-the-flutter-devtools)
+    - [DevTools key features](#devtools-key-features)
+      - [Flutter inspector](#flutter-inspector)
+      - [Timeline View](#timeline-view)
+      - [Memory view](#memory-view)
+      - [Performance overlay](#performance-overlay)
+      - [Dart Devtools Integration](#dart-devtools-integration)
+      - [Debugging and Hot Reload](#debugging-and-hot-reload)
+      - [Command-Line Interface (CLI)](#command-line-interface-cli)
+
 ## Debug mode
 
 Flutter much like most programming languages has a way of debugging code. To debug Flutter apps, first run the app with *Start Debugging*. Once the app builds and runs, you can manipulate the variables and execute breakpoints.

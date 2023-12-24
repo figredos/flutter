@@ -1,8 +1,14 @@
 # Text and Styling Widgets
 
-[Text](#text)
-
-[Image related widgets](#image-related-widgets)
+- [Text and Styling Widgets](#text-and-styling-widgets)
+  - [Text](#text)
+  - [Opacity](#opacity)
+  - [Image related Widgets](#image-related-widgets)
+    - [Image](#image)
+      - [Image.asset()](#imageasset)
+      - [Image.network](#imagenetwork)
+      - [Image.file](#imagefile)
+      - [Image.memory](#imagememory)
 
 ## Text
 
