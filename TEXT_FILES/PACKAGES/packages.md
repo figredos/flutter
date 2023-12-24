@@ -4,6 +4,7 @@ Here are some flutter packages used in this repo.
 
 - [Google Fonts](#google-fonts)
 - [UUID](#uuid)
+- [intl](#intl)
 - [Appendix](#appendix)
 
 ## Google Fonts
