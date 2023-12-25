@@ -17,18 +17,22 @@ Dart is an object-oriented, class-based, garbage-collected language with C-style
   - [Formatting](#formatting)
   - [Operators](#operators)
     - [Spread (...)](#spread-)
+    - [Null-aware (?)](#null-aware-)
+      - [Conditional Access (?.)](#conditional-access-)
+      - [Conditional Assignment](#conditional-assignment)
+      - [Conditional Access with Assignment (??=)](#conditional-access-with-assignment-)
+    - [Postfix exclamation mark (!)](#postfix-exclamation-mark-)
   - [Enum](#enum)
-  - [Getters \& Setters](#getters--setters)
-    - [Getters](#getters)
-    - [Setters](#setters)
   - [Context](#context)
   - [Multiple Screens](#multiple-screens)
     - [Rendering content conditionally](#rendering-content-conditionally)
     - [Lifting state up](#lifting-state-up)
+  - [Futures](#futures)
+    - [async \& await](#async--await)
 
 ## From Dart to Machine Code
 
-Dart code isn't natively compiled and interpreted by iOS, Android, Web, etc. Instead, dart *parses the code from top to bottom when running a project for a targeted platform. After parsing the code, Dart and Flutter tools compile the code into native iOS and Android machine code that is then executed on the targeted platform.
+Dart code isn't natively compiled and interpreted by iOS, Android, Web, etc. Instead, Dart *parses the code from top to bottom when running a project for a targeted platform. After parsing the code, Dart and Flutter tools compile the code into native iOS and Android machine code that is then executed on the targeted platform.
 
 (*parse: analyzing and converting a program into an internal format that a runtime environment can actually run)
 
@@ -36,7 +40,7 @@ Dart code isn't natively compiled and interpreted by iOS, Android, Web, etc. Ins
 
 There is a key instruction needed to start programming flutter apps:
 
-```dart
+```Dart
 runApp();
 ```
 
@@ -49,18 +53,18 @@ The ***runApp()*** function is provided by the flutter framework, and it is used
 Packages likewise functions are a baseline of programming. Packages are namespaces that organize a set of related classes and/or interfaces. Importing a package allows the usage of functions and classes that are not native to the code, it can also be used to use third party functions and classes.
 
 ```Dart
-import 'package:flutter/material.dart';
+import 'package:flutter/material.Dart';
 
 int main(){
     runApp({widget_name});
 }
 ```
 
-For instance, to run the ***runApp()*** function mentioned above, we first need to import the *'material.dart'* file from *'packages:flutter/'*.
+For instance, to run the ***runApp()*** function mentioned above, we first need to import the *'material.Dart'* file from *'packages:flutter/'*.
 
 ## Widgets
 
-Flutter is built with dart, but more specifically, we use dart to program so called ***widgets***. Widgets are immutable descriptions of part of a user interface.
+Flutter is built with Dart, but more specifically, we use Dart to program so called ***widgets***. Widgets are immutable descriptions of part of a user interface.
 
 A flutter app is built using a combination of \*nested flutter widgets, or a ***widget tree***. When using the ***runApp()***, we pass the root of the widget tree as an argument for the function.
 
@@ -70,8 +74,8 @@ Flutter has a [website](https://docs.flutter.dev/ui/widgets) with a catalog of w
 
 One of the most basic widgets, that will give a visual interface when passed as an argument int the ***runApp()*** function is the ***MaterialApp()***.
 
-```dart
-import 'package:flutter/material.dart';
+```Dart
+import 'package:flutter/material.Dart';
 
 int main(){
     runApp(MaterialApp());
@@ -90,13 +94,13 @@ There are two keyword that indicate the immutability of a code, ***const*** and 
 
 ### "const" Values
 
-***const*** is a keyword built into the dart language that helps optimizing runtime performance. It does so because it prevents the reallocation of memory for a piece of code that doesn't change.
+***const*** is a keyword built into the Dart language that helps optimizing runtime performance. It does so because it prevents the reallocation of memory for a piece of code that doesn't change.
 
 When a variable is declared in a programming language, it's value is stored in the memory of the computer. When the code accesses that bit of code again, it usually allocates another part of the computer's memory for that code. When we use the "const" keyword, it stops the computer from allocating another part of the memory for the code that follows it.
 
 ### "final" Values
 
-In dart, the ***final*** keyword is used to declare that can be assigned a value only once. Once a value is assigned to a ***final*** variable, it cannot be changed. This keyword is often used for constants, configuration values, or variables that should not e reassigned during the runtime of the program.
+In Dart, the ***final*** keyword is used to declare that can be assigned a value only once. Once a value is assigned to a ***final*** variable, it cannot be changed. This keyword is often used for constants, configuration values, or variables that should not e reassigned during the runtime of the program.
 
 ## Trailing comma
 
@@ -124,9 +128,9 @@ Types can be built in, provided by flutter, third party, imported by packages, o
 
 ## Formatting
 
-When writing in dart, ***PascalCase*** should be prioritized, when using names with two words for naming classes. When naming other variables ***camelCase*** should be used.
+When writing in Dart, ***PascalCase*** should be prioritized, when using names with two words for naming classes. When naming other variables ***camelCase*** should be used.
 
-```dart
+```Dart
 PascalCase
 
 camelCase
@@ -144,17 +148,63 @@ Dart like any other programming language has a set of operators of its own. Here
 
 ... or spread, is a convenient syntax feature that allows the easy unpacking of the elements in a collection (lists and sets) or the key-value pair of a map into another collection or function call. The spread operator is useful for combining or spreading the contents of one iterable into another:
 
-```dart
+```Dart
 List<int> list1 = [1, 2, 3];
 List<int> list2 = [list1, 4, 5]; //[[1, 2, 3], 4, 5]
 List<int> list3 = [...list1, 4, 5]; //[1, 2, 3, 4, 5]
 ```
 
-## Enum
+### Null-aware (?)
 
-In dart, an enumeration (enum) is a way to represent a fixed set of values as distinct named constants. Enumerations provide a way to define named values for a type, making the code more readable and expressive. Enumerations are commonly used to represent a set of related values or options.
+In Dart the '?' operator is used for null-aware operations, and it is often referred to as the "null-aware" or the "null-safe" operator. It helps handle cases where a variable might be 'null' and allows you to perform operations only when the variable is non-null.
+
+There are several contexts in which the '?' operator is used:
+
+#### Conditional Access (?.)
+
+This operator allows you to call a method or access a property on an object only if the object is non-null. If the object is 'null', the entire expression evaluates to 'null.
+
+```Dart
+String? name; //Nullable string
+
+int? length = name?.length;
+```
+
+In this case, if name is null length will be null, otherwise, it's the length of the string.
+
+#### Conditional Assignment
+
+The '??' operator is the null-aware coalescing operator. It returns the right-hand operand when the left-hand operand is 'null'. Otherwise, it returns the left-hand operand.
 
 ```dart
+String? name;
+String nonNullableName = name ?? 'Default';
+```
+
+In this case, if name is null, nonNullableName is 'Default'.
+
+#### Conditional Access with Assignment (??=)
+
+The '??=' is a combination of the null-aware assignment (??) and assignment (=) operators. It assigns the value on the right to the variable on the left only if the variable on the left is 'null'.
+
+```dart
+String? name;
+name ??= 'Default';
+```
+
+In this case, if name is null, assign 'Default' to name.
+
+### Postfix exclamation mark (!)
+
+In Dart, the '!' operator is known as the "bang" or "postfix exclamation mark" operator, and it is used for null assertion. This operator is used to assert that a variable with a nullable type is non-null at a particular point in the code. When used after a nullable variable, the Dart compiler understands that the variable is non-null.
+
+It is important to use the '!' operator with caution, and it's generally recommended to use it only when absolutely certain that the variable is non-null at the point where it's used. Otherwise it can lead to runtime errors and null pointer exceptions. The use of null-aware operators ('?.', '??', '??=') and explicit null checks is often preferred for safer and more predictable code. The '!' operator is particularly useful in scenarios where the developer has additional information or context that ensures non-nullness.
+
+## Enum
+
+In Dart, an enumeration (enum) is a way to represent a fixed set of values as distinct named constants. Enumerations provide a way to define named values for a type, making the code more readable and expressive. Enumerations are commonly used to represent a set of related values or options.
+
+```Dart
 enum Color {
     red, 
     green,
@@ -165,85 +215,9 @@ enum Color {
 
 Dart enums are zero-indexed, so 'Color.red' has index 0, 'Color.green' has index 1 and so on. They are particularly useful when there is a fixed set of related values that are meant to be used together, and they help make the code more readable and maintainable.
 
-## Getters & Setters
-
-Dart supports the usage of getters and setters.
-
-### Getters
-
-Getters are a way to provide access to the value of an object's property. They are a form of syntactic sugar that allows the definition of a method that looks like a property. The getter method is invoked when the property is accessed.
-
-```dart
-class MyClass {
-    // Private variable
-    String _myProperty;
-
-    // Getter method
-    String get myProperty {
-        // Additional logic if needed
-        return _myProperty;
-    }
-}
-
-void main() {
-    var myObject = MyClass();
-    print(myObject.myProperty); // Accessing the getter
-}
-```
-
-If there is no need for additional logic, there is a shorthand syntax:
-
-```dart
-class MyClass {
-    String _myProperty;
-
-    String get myProperty => _myProperty;
-}
-```
-
-### Setters
-
-Setters are used to provide a way to update the value of an object's property. Setters are similar to getters but are used for assigning values rather that retrieving them.
-
-```dart
-class MyClass {
-    //Private variable
-    String _myProperty;
-
-    //Getter method
-    String get myProperty => _myProperty;
-
-    // Setter method
-    set myProperty(String value) {
-        // Additional logic if needed
-        _myProperty = value;
-    }
-}
-
-void main() {
-    var myObject = MyClass();
-
-    // Using the setter
-    myObject.myProperty = 'New Value';
-    print(myObject.myProperty); // Accessing the getter
-}
-```
-
-Much like getters, setter have shorthand usage if there is no need for additional logic:
-
-```dart
-class MyClass {
-    String _myProperty;
-
-    String get myProperty => _myProperty;
-
-    String set myProperty(String value) => _myProperty = value;
-}
-```
-
 ## Context
 
-When creating dart classes it is easy to come across the *context* keyword. This keyword refers to the 'BuildContext' object, which is a crucial part of Flutter. The 'BuildContext' object represents the location of a widget within the widget tree. It is used to obtain information about the location of the widget in the widget tree and to perform tasks related to the widget's position in the hierarchy. Every widget in Flutter is associated with a BuildContext.
+When creating Dart classes it is easy to come across the *context* keyword. This keyword refers to the 'BuildContext' object, which is a crucial part of Flutter. The 'BuildContext' object represents the location of a widget within the widget tree. It is used to obtain information about the location of the widget in the widget tree and to perform tasks related to the widget's position in the hierarchy. Every widget in Flutter is associated with a BuildContext.
 
 ## Multiple Screens
 
@@ -258,3 +232,13 @@ Rendering content conditionally refers to the practice of displaying content or 
 ### Lifting state up
 
 Lifting state up is a pattern in Flutter were the responsibility for managing the state of a widget is moved to a higher-level widget in the widget tree. This is done to share the sate among multiple widgets. When a piece of state is lifted up, it means that the state is managed by a common ancestor widget, and its value is passed down to the child widgets that need access to that state.
+
+## Futures
+
+In Dart, a 'Future' represents a value or error that will be available at some time in the future. It is a core part of Dart's asynchronous programming model, which allows you to perform non-blocking operations, such as fetching data from a network, reading files, or executing time-consuming computations, without blocking the execution of the program.
+
+A 'Future' can be completed with a value or an error using the 'complete' or 'completeError' methods, respectively. The 'then' method can be used to attach callbacks that will be invoked when the Future completes, whether with a value or an error.
+
+### async & await
+
+Dart's 'async' and 'await' keywords are often used in conjunction with 'Future' to simplify asynchronous code and make it more readable. 'async' functions return a 'Future' and 'await' is used to wait for a 'Future' to complete without blocking the program's execution.
