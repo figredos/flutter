@@ -11,6 +11,14 @@ Material design is a design Language created by Google that provides guidelines 
     - [OutlinedButton](#outlinedbutton)
     - [IconButton](#iconbutton)
     - [FloatingActionButton](#floatingactionbutton)
+  - [TextField](#textfield)
+    - [maxLength](#maxlength)
+    - [controller](#controller)
+    - [keyboardType](#keyboardtype)
+    - [textInputAction](#textinputaction)
+    - [onChanged](#onchanged)
+    - [onSubmitted](#onsubmitted)
+    - [obscureText](#obscuretext)
 
 ## MaterialApp
 
@@ -53,3 +61,37 @@ This is a button that consists only of an icon. It is often used that are repres
 ### FloatingActionButton
 
 This is a circular material design button typically used for the primary action in an application.
+
+## TextField
+
+The 'TextField' widget is used to create a text input field, allowing users to enter and edit text. It's a fundamental building block for gathering user input in forms and interacting with text-based data in applications.
+
+Bellow there are some of the most useful parameters in 'TextField':
+
+### maxLength
+
+The maximum number of characters allowed for the text input.
+
+### controller
+
+Controls the text being edited. This allows you to read or manipulate the text input programmatically. This parameter requires the usage of the ['TextEditingController' class](../../DART_BASICS/classes.md#texteditingcontroller).
+
+### keyboardType
+
+The type of keyboard to display such as text, number, email, phone, etc. This influences the layout and functionality of the on-screen keyboard.
+
+### textInputAction
+
+The action button on the keyboard, which determines the action that will be triggered when pressed.
+
+### onChanged
+
+A callback function that is invoked whenever the text input changes. It provides the updated text as an argument.
+
+### onSubmitted
+
+A callback function that is invoked when the user submits the text input.
+
+### obscureText
+
+A boolean that determines wether the entered text should be obscured, typically used for password input.
