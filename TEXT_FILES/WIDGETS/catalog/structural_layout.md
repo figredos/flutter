@@ -17,6 +17,7 @@ Widgets that perform Structural and Layout in Flutter.
   - [Scrollable Widgets](#scrollable-widgets)
     - [SingleChildScrollView](#singlechildscrollview)
     - [ListView](#listview)
+    - [Dismissible](#dismissible)
 
 ## Scaffold
 
@@ -79,3 +80,7 @@ This widget is used to create a scrollable view containing a single child. it al
 The ListView widget is a scrollable list of widgets arranged linearly. It allows the creation of a scrolling list of widgets, where each item in the list is represented by a widget. The 'ListView' is a versatile and commonly used widget for displaying a collection of items that can be scrolled vertically or horizontally.
 
 One of the great benefits of using ListView is that it uses *Lazy View*. In other words, only the widgets that are currently visible on the screen are rendered, improving performance for large lists. One other feature is the *Builder Pattern*, this feature allows the usage of this feature for long lists with the 'ListView.builder' constructor.
+
+### Dismissible
+
+In flutter the 'Dismissible' widget is used to make its child widget dismissible by swiping it horizontally. It's commonly used in scenarios where you have a list of items, and you want users to be able to swipe an item to trigger some action, such as deletion.
