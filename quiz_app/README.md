@@ -18,11 +18,13 @@ In this case, the navigation from the first screen to the second happens when th
 
 The start screen, questions screen and results screen respectively:
 
-<div style="display: flex;">
-  <img src="readme_assets/start_screen.png" alt="Image 1" height=350 style="margin-right:5px;">
-  <img src="readme_assets/questions_screen.png" alt="Image 2" height=350 style="margin-right:5px;">
-  <img src="readme_assets/results_screen.png" alt="Image 2" height=350>
-</div>
+<p align="center">
+    <div style="display: flex;">
+      <img src="readme_assets/start_screen.png" alt="Image 1" height=350 style="margin-right:5px;">
+      <img src="readme_assets/questions_screen.png" alt="Image 2" height=350 style="margin-right:5px;">
+      <img src="readme_assets/results_screen.png" alt="Image 2" height=350>
+    </div>
+</p>
 
 ### Conditional Statements
 
