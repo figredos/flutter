@@ -6,11 +6,9 @@ Flutter app that provides a quiz about flutter features.
     <img src="readme_assets/quiz_app.gif" height=350>
 </p>
 
-## Development reasons
+## Development
 
 This app was developed for understanding some advanced dart and Flutter basics.
-
-In this app, concepts like, multiple screens, usage of conditional statements, usage of data from Maps, usage of third party packages, passing data across Widgets via functions.
 
 ### Multiple screens
 
