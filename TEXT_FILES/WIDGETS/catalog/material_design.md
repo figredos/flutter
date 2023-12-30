@@ -20,6 +20,7 @@ Material design is a design Language created by Google that provides guidelines 
     - [onChanged](#onchanged)
     - [onSubmitted](#onsubmitted)
     - [obscureText](#obscuretext)
+  - [SnackBar](#snackbar)
 
 ## MaterialApp
 
@@ -100,3 +101,15 @@ A callback function that is invoked when the user submits the text input.
 ### obscureText
 
 A boolean that determines wether the entered text should be obscured, typically used for password input.
+
+## SnackBar
+
+The SnackBar widget is a component used to display short-duration messages or notifications to the user. It is typically used to provide feedback about a completed action, an error, or any other transient information that doesn't require a dedication screen. Some of the key-points of the SnackBar are as follow:
+
+- **Content property**: where a text (not the Text widget, just a plain string) or widget to be displayed in the message.
+
+- **Duration**: this property specifies how long the SnackBar should be visible on the screen before automatically dismissing itself.
+
+- **ScaffoldMessenger.of().showSnackBar()**: this is a method used inside a Scaffold widget that shows the SnackBar.
+
+- **ScaffoldMessenger.of().clearSnackBar()**: this is a method used inside a Scaffold widget that clears the SnackBar from the screen.
