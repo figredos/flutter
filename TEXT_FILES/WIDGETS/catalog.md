@@ -2,7 +2,9 @@
 
 A summary of the most common widgets, their uses and some commentary.
 
-- [Structural / Layout Widgets](catalog/structural_layout.md)
+- [Structural Widgets](catalog/structural.md)
+  
+- [Layout Widgets](catalog/layout.md)
 
 - [Text and Styling Widgets](catalog/text_styling.md)
 
