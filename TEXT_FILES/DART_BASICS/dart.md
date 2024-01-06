@@ -9,9 +9,10 @@ Dart is an object-oriented, class-based, garbage-collected language with C-style
   - [Dart Functions](#dart-functions)
   - [Importing Features From Packages](#importing-features-from-packages)
   - [Widgets](#widgets)
-  - [const and final](#const-and-final)
+  - [const, final and var](#const-final-and-var)
     - ["const" Values](#const-values)
     - ["final" Values](#final-values)
+    - ["var" Values](#var-values)
   - [Trailing comma](#trailing-comma)
   - [Understanding types](#understanding-types)
   - [Formatting](#formatting)
@@ -88,9 +89,11 @@ Unlike the function it is being passed to as an argument, the ***MaterialApp()**
 
 (*class: classes are a Dart feature that can be used to build more complex data structures - like widgets.)
 
-## const and final
+## const, final and var
 
-There are two keyword that indicate the immutability of a code, ***const*** and ***final***. The difference between the two is that const is more restrictive and is used for compile-time constant whereas finalis used for values that might be determined at runtime, but won't change after initialization. Final allows for more flexibility in terms of when and how the value is determined, making it suitable for a wider range of use cases compared to const
+There are two keyword that indicate the immutability of a code, ***const*** and ***final***. The difference between the two is that const is more restrictive and is used for compile-time constant whereas finalis used for values that might be determined at runtime, but won't change after initialization. Final allows for more flexibility in terms of when and how the value is determined, making it suitable for a wider range of use cases compared to const.
+
+When using a final value in objects like lists, there are ways of adding values to the list. This happens because the value in-memory does not change, the list is still the same, with the only difference being the additional value. This wouldn't work if a whole new list was to be assigned to the variable. This behavior does not apply to the const keyword, that makes the values completely immutable. On the other hand, the var keywords allows both of the types of assignment.
 
 ### "const" Values
 
@@ -101,6 +104,10 @@ When a variable is declared in a programming language, it's value is stored in t
 ### "final" Values
 
 In Dart, the ***final*** keyword is used to declare that can be assigned a value only once. Once a value is assigned to a ***final*** variable, it cannot be changed. This keyword is often used for constants, configuration values, or variables that should not e reassigned during the runtime of the program.
+
+### "var" Values
+
+In Dart, the **var** keyword is used to declare a variable without explicitly specifying its type. Instead, the type of the variable is inferred from the type of the assigned value. Dart is statically-typed language, meaning that variable types are known at compile-time. However, Dart's type inference system allows you to use the **var** when the type can be determined without explicit declaration.
 
 ## Trailing comma
 
