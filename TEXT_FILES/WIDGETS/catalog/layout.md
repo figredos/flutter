@@ -11,6 +11,7 @@ Widgets that are responsible for arranging and positioning other widgets within 
   - [SingleChildScrollView](#singlechildscrollview)
   - [ListView](#listview)
   - [Dismissible](#dismissible)
+  - [LayoutBuilder](#layoutbuilder)
 
 ## Center
 
@@ -45,3 +46,11 @@ One of the great benefits of using ListView is that it uses *Lazy View*. In othe
 ## Dismissible
 
 In flutter the 'Dismissible' widget is used to make its child widget dismissible by swiping it horizontally. It's commonly used in scenarios where you have a list of items, and you want users to be able to swipe an item to trigger some action, such as deletion.
+
+## LayoutBuilder
+
+This widget is an utility widget that provides information about the constraints that its child widget has within its parent's layout. It allows the creation of a widget whose size or layout depends on the constraints provided by its parent.
+
+The **LayoutBuilder** takes a callback function as its child, and this function receives a **BuildContext** and a **BoxConstraints** object as parameters. The **BoxConstraints** object represents the minimum and maximum height and width that the child can occupy.
+
+The **LayoutBuilder** is particularly useful when you need to create widgets whose layout depends on the constraints imposed by their parent widgets. It allows the creation of more flexible and responsive layouts within the constraints provided by the parent.
