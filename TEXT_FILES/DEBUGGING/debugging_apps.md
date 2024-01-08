@@ -67,7 +67,7 @@ Dart DevTools is integrated into the Flutter DevTools suite. Dart DevTools provi
 
 #### Debugging and Hot Reload
 
-DevTools integrates with Flutter's debugging and hor reload capabilities. Developers can set breakpoints, step trough code, and use hot reload to quickly apply code changes without restarting the entire application.
+DevTools integrates with Flutter's debugging and hor reload capabilities. Developers can set breakpoints, step through code, and use hot reload to quickly apply code changes without restarting the entire application.
 
 #### Command-Line Interface (CLI)
 
