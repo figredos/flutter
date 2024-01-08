@@ -1,13 +1,5 @@
 # Theming
 
-- [Theming](#theming)
-  - [Setting up a theme](#setting-up-a-theme)
-  - [.copyWith() \& .styleFrom()](#copywith--stylefrom)
-    - [.copyWith()](#copywith)
-    - [.styleFrom()](#stylefrom)
-  - [Dark mode](#dark-mode)
-  - [Setting up colors](#setting-up-colors)
-
 A big part of apps is their appearance. This is how the app is presented, an app can have the best engineering behind it, but it needs to be appealing to users. Theming can be done within each widget, but that seems like too much work, and it is! So flutter provides tools to help with this problem.
 
 This can be done only once, in the ***MaterialApp*** widget. This widget has parameters that can be tweaked to configure the theming of individual widgets through type, such as Scaffold widgets, so that once that theme has been set in MaterialApp, all instances of Scaffold in the app will use this theme.
@@ -15,6 +7,14 @@ This can be done only once, in the ***MaterialApp*** widget. This widget has par
 This is a great way of setting themes for an app, because with the help of MaterialApp's *'theme'* parameter, all of the themes used in the app are centralized making it easier to manage them.
 
 You can reference themes that have been previously set up by using Theme.off(context).
+
+- [Theming](#theming)
+  - [Setting up a theme](#setting-up-a-theme)
+  - [.copyWith() \& .styleFrom()](#copywith--stylefrom)
+    - [.copyWith()](#copywith)
+    - [.styleFrom()](#stylefrom)
+  - [Dark mode](#dark-mode)
+  - [Setting up colors](#setting-up-colors)
 
 ## Setting up a theme
 
