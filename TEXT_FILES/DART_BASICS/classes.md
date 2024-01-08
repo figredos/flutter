@@ -11,9 +11,9 @@ In this file, you can find implementations of basic feature using Dart classes, 
   - [Most notable dart classes](#most-notable-dart-classes)
     - [TextEditingController](#texteditingcontroller)
     - [Navigator](#navigator)
-      - [Route](#route)
+      - [Navigator.push()](#navigatorpush)
+      - [Pop](#pop)
       - [Navigator Stack](#navigator-stack)
-      - [Push and Pop](#push-and-pop)
       - [Named routes](#named-routes)
 
 ## Getters & Setters
@@ -112,22 +112,35 @@ class _MyWidgetState extends State<MyWidget> {
   }
 }
 ```
-
 ### Navigator
 
-The 'Navigator' is responsible for managing a stack of "routes" or "screens" in your Flutter application. It facilitates navigation between different screens, allowing users to move forward and backward through the app's UI hierarchy. Here are some of the key concepts related to the 'Navigator':
+Another way of navigating through screens is using the Navigator class. The Navigator is responsible for managing a "stack" of routes os screens in a Flutter application. It facilitates navigation between different screens, allowing users to move forward and backward through the app's UI hierarchy.
 
-#### Route
+The Navigator class does not require a State to be reset in order to change screens, making it possible to use this class in StateLess Widgets.
 
-A "route" represents a screen or page in the app. Each route is associated with a widget that defines the content and behavior of that screen.
+Navigator functions as a stack, so when a new Screen is pushed, the Navigator class stacks that screen and when it pops it removes the top-most screen from the stack. The top-most screen is the one that is visible to the user, with the other ones are partially visible, if at all.
+
+#### Navigator.push()
+
+This method is used to push a Screen onto the stack. When used, the main screen shows the top-most screen, in this case the one passed as a **route**. ```.push()``` requires the *context* and requires the previously mentioned route. Routes represent screens or pages on the app. Each route is associated with a widget that defines the content and behavior of that screen.
+
+```dart
+Navigator.push(context, builder);
+// or
+Navigator.of(context).push(builder);
+```
+
+The route receives as an argument a **MaterialPageRoute** object. This type of object is responsible for building the route passed as argument to Navigator. It receives a builder that returns the widget to be used as a screen.
+
+It is important to note that in Stateless *Widgets*, the **context** is not globally available.
+
+#### Pop
+
+You can "pop" the current route off the stack to go back to the previous screen.
 
 #### Navigator Stack
 
 The 'Navigator' maintains a stack of routes. When you push a new route onto the stack, it becomes the active route, and users can navigate back to the previous routes by popping them off the stack.
-
-#### Push and Pop
-
-You can "push" a new route onto the stack to navigate to a different screen. Conversely, you can "pop" the current route off the stack to go back to the previous screen.
 
 #### Named routes
 
