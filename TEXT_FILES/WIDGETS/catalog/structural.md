@@ -19,6 +19,8 @@ It represents the basic material design visual structure of the app, including t
 
 The Scaffold widget serves as a container for other widgets and provides a convenient way to organize the visual elements of the app.
 
+When building multiple screens in a flutter app, the Scaffold widget is essential. The likelihood of using this widget to do the base screen setup in the different screens is very high.
+
 ## Column
 
 The column widget is used to arrange its children widgets vertically in a single column. Ut is part of the layout widgets in Flutter, and is commonly used to create vertical arrangements of widgets, such as lists, forms, or any vertically stacked content.
