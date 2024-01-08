@@ -10,6 +10,8 @@ Widgets that perform Structural and Layout in Flutter.
   - [Spacer](#spacer)
   - [Container](#container)
   - [SizedBox](#sizedbox)
+  - [GestureDetector](#gesturedetector)
+  - [InkWell](#inkwell)
 
 ## Scaffold
 
@@ -44,3 +46,11 @@ This is a basic layout element that can contain other widgets and provide variou
 ## SizedBox
 
 The main purpose of SizedBox is to control the size (width, height) of its child widget, or to create space within a layout.
+
+## GestureDetector
+
+The GestureDetector widget is a versatile widget that can recognize a variety of gestures and allows the attachment of callbacks to these gestures. It wraps around a single child widget and detects gestures performed on that child.
+
+## InkWell
+
+InkWell is a widget built on top of [GestureDetector](#gesturedetector) and provides additional visual feedback in the form of an ink splash when the user interacts with it. It's often used when a visual response is needed, such as a ripple effect, when the user taps on a widget.
