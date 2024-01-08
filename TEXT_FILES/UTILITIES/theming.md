@@ -110,6 +110,6 @@ void main() {
 
 ## Setting up colors
 
-The theming can be done trough the *'theme'* parameter in Flutter's *MaterialApp*. But instead of doing it one by one, you can use a **color scheme**.
+The theming can be done through the *'theme'* parameter in Flutter's *MaterialApp*. But instead of doing it one by one, you can use a **color scheme**.
 
 Color Schemes refer to a set of colors that are carefully chosen and combined to create a visually appealing and harmonious design. These schemes are often used in various contexts, such as graphic design, web design, UI/UX design, and branding. A well-chosen color scheme can contribute to the overall aesthetic, mood and readability of a design.
