@@ -27,3 +27,5 @@ flutter run {path_of_downloaded_file}
 - [Quiz App:](quiz_app) An app that provides a quiz about basic Flutter knowledge. Created for understanding more advanced basics of dart and Flutter.
 
 - [Expense Tracker App:](expense_tracker_app) App that provides a simple way to track expenses. Created for understanding theming and user interactivity.
+
+- [meals_app:](meals_app) In development.
