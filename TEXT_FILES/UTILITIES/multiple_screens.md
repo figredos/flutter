@@ -4,6 +4,7 @@ Using multiple screens is a basic feature of apps in general. So, Flutter suppor
 
 - [Multiple screens](#multiple-screens)
   - [Functions](#functions)
+  - [Navigator](#navigator)
 
 ## Functions
 
@@ -39,3 +40,9 @@ A good example is found in the [Quiz App's 'quiz.dart'](/quiz_app/lib/quiz.dart)
 ```
 
 The default is the StartScreen, it is changed to the QuestionsScreen if the '**switchScreen**' function is executed (it is executed once the button in the start screen is pressed). The screen changes again if all of the registered questions have been answered, and finally, it changes back to the start screen if the '**restartQuiz**' function is executed (executes when the button in the results screen is pressed).
+
+## Navigator
+
+Another way of using and managing multiple screens with Flutter is by using the [Navigator](../DART_BASICS/classes.md#navigator). This class stacks the screens it receives as argument, making it easy to push and pop screens from this stack.
+
+To implement the Navigator, simply use the class in a function, activated when pressing buttons, to push or pop screens.
