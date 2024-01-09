@@ -6,6 +6,8 @@ Widgets that perform Structural and Layout in Flutter.
   - [Scaffold](#scaffold)
   - [Column](#column)
   - [Row](#row)
+  - [Stack](#stack)
+  - [Positioned](#positioned)
   - [Card](#card)
   - [Spacer](#spacer)
   - [Container](#container)
@@ -30,6 +32,25 @@ The column widget is used to arrange its children widgets vertically in a single
 ## Row
 
 This Widget is used to arrange its children widgets horizontally in a single row. It is part of the layout widgets and is commonly used when you want to create a horizontal arrangement of widgets, such as buttons, text or other elements.
+
+## Stack
+
+In Flutter, the **Stack** widget is used to overlay widgets on top of each other. It allows the developer to position child widgets relative to the top-left corner of the stack, and each child can be positioned independently. The child that is last in the list of children is drawn on the top of the earlier children.
+
+To specify the exact position of a child relative to the top-left corner of the stack, the [Positioned](#positioned) widget can be used. The size of the stack will be determined by the larges child in both width and height. To limit the size of the stack, constraints or sizing the children should be set accordingly.
+
+## Positioned
+
+In Flutter, the Positioned widget is used to position a child widget within a [Stack](#stack). The Stack widget allows widgets to overlay on top of each other, and Positioned helps you precisely position a child widget relative to the top-left corner of the Stack.
+
+The Positioned widget takes the following parameters:
+
+- top: the distance from the top edge of the 'Stack' to the top edge of the child widget
+- right: the distance from the right edge of the 'Stack' to the right edge of the child widget
+- bottom: the distance from the bottom edge of the 'Stack' to the bottom edge of the child widget
+- left: the distance from the left edge of the 'Stack' to the left edge of the child widget
+- width: the width of the child widget
+- height: the height of the child widget
 
 ## Card
 
