@@ -7,7 +7,7 @@ import 'package:meals_app/models/meal.dart';
 const availableCategories = [
   Category(
     id: 'c1',
-    title: 'Italian',
+    title: 'All',
     color: Colors.purple,
   ),
   Category(
@@ -32,7 +32,7 @@ const availableCategories = [
   ),
   Category(
     id: 'c6',
-    title: 'Exotic',
+    title: 'Italian',
     color: Colors.green,
   ),
   Category(
@@ -62,6 +62,8 @@ const dummyMeals = [
     id: 'm1',
     categories: [
       'c1',
+      'c1',
+      'c6',
       'c2',
     ],
     title: 'Spaghetti with Tomato Sauce',
@@ -95,6 +97,7 @@ const dummyMeals = [
   Meal(
     id: 'm2',
     categories: [
+      'c1',
       'c2',
     ],
     title: 'Toast Hawaii',
@@ -123,6 +126,7 @@ const dummyMeals = [
   Meal(
     id: 'm3',
     categories: [
+      'c1',
       'c2',
       'c3',
     ],
@@ -155,6 +159,7 @@ const dummyMeals = [
   Meal(
     id: 'm4',
     categories: [
+      'c1',
       'c4',
     ],
     title: 'Wiener Schnitzel',
@@ -190,6 +195,7 @@ const dummyMeals = [
   Meal(
     id: 'm5',
     categories: [
+      'c1',
       'c2'
           'c5',
       'c10',
@@ -226,6 +232,7 @@ const dummyMeals = [
   Meal(
     id: 'm6',
     categories: [
+      'c1',
       'c6',
       'c10',
     ],
@@ -262,6 +269,7 @@ const dummyMeals = [
   Meal(
     id: 'm7',
     categories: [
+      'c1',
       'c7',
     ],
     title: 'Pancakes',
@@ -293,6 +301,7 @@ const dummyMeals = [
   Meal(
     id: 'm8',
     categories: [
+      'c1',
       'c8',
     ],
     title: 'Creamy Indian Chicken Curry',
@@ -326,6 +335,7 @@ const dummyMeals = [
   Meal(
     id: 'm9',
     categories: [
+      'c1',
       'c9',
     ],
     title: 'Chocolate Souffle',
@@ -375,6 +385,7 @@ const dummyMeals = [
   Meal(
     id: 'm10',
     categories: [
+      'c1',
       'c2',
       'c5',
       'c10',
