@@ -5,6 +5,7 @@ Material design is a design Language created by Google that provides guidelines 
 - [Material Design Widgets](#material-design-widgets)
   - [MaterialApp](#materialapp)
   - [AppBar](#appbar)
+  - [BottomNavigationBar](#bottomnavigationbar)
   - [Button Widgets](#button-widgets)
     - [ElevatedButtons](#elevatedbuttons)
     - [TextButton](#textbutton)
@@ -30,15 +31,17 @@ The ***MaterialApp*** widget is a fundamental component that sets up the basic s
 
 AppBar is a Material Design widget that represents the app bar at the top of the screen.It is commonly used to display the title of the current screen, as well as optional actions, icons, and navigation-related components. The 'AppBar' is part of the scaffold structure and is typically used within the [Scaffold](structural_layout.md#scaffold) widget.
 
-The AppBar is positioned at the top of the screen by default. It provides a consistent and visually prominent space for key information and actions. 
+The AppBar is positioned at the top of the screen by default. It provides a consistent and visually prominent space for key information and actions. It includes a title that can be specified to represent the name or purpose of the current screen. It allows the inclusion of various actions in it, such as icons, buttons, or menu items. These actions are often used for common tasks or navigation.
 
-It includes a title that can be specified to represent the name or purpose of the current screen.
+It often includes a leading widget on the left side, which is often used for a back button or navigation icon. The 'AppBar' can also have a bottom section where additional tabs or other widgets can be placed.
 
-You can include various actions in it, such as icons, buttons, or menu items. These actions are often used for common tasks or navigation.
+## BottomNavigationBar
 
-It often includes a leading widget on the left side, which is often used for a back button or navigation icon.
+The BottomNavigationBar is a Flutter widget that is typically used as a navigation bar at the bottom of the screen in a mobile application. It provides a way to switch between different sections or views of the app, often associated with different tabs or pages. The BottomNavigationBar is commonly used within a [Scaffold](structural.md) widget to structure the overall layout of the app.
 
-The 'AppBar' can also have a bottom section where additional tabs or other widgets can be placed.
+This widget is a common UI element in mobile apps, allowing users to navigate between different sections of the app easily. It's often paired with a TabBarView or similar widgets to manage the content associated with each tab. It is set in the Scaffold widget by using the parameter '*bottomNavigationBar*'.
+
+This parameter receives an argument of type BottomNavigationBar. This in turn receives two major parameters, onTap, that sets the behavior when interacted with, items that receives objects of a BottomNavigationBarItem class (that receives an icon and a label), and currentIndex, that highlights the active tab.
 
 ## Button Widgets
 
