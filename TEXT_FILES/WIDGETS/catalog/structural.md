@@ -19,11 +19,11 @@ Widgets that perform Structural and Layout in Flutter.
 
 The ***Scaffold*** widget is a basic structure that provides a visual framework for building the app's user interface.
 
-It represents the basic material design visual structure of the app, including the app bar, the body of the app and other structural elements.
-
-The Scaffold widget serves as a container for other widgets and provides a convenient way to organize the visual elements of the app.
+It represents the basic material design visual structure of the app, including the app bar, the body of the app and other structural elements. The Scaffold widget serves as a container for other widgets and provides a convenient way to organize the visual elements of the app.
 
 When building multiple screens in a flutter app, the Scaffold widget is essential. The likelihood of using this widget to do the base screen setup in the different screens is very high.
+
+The Scaffold widget allows the implementation of an [AppBar](material_design.md#appbar) and of a [BottomNavigationBar](material_design.md#bottomnavigationbar)
 
 ## Column
 
