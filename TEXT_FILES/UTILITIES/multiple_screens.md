@@ -5,6 +5,7 @@ Using multiple screens is a basic feature of apps in general. So, Flutter suppor
 - [Multiple screens](#multiple-screens)
   - [Functions](#functions)
   - [Navigator](#navigator)
+  - [Tab-based Navigation](#tab-based-navigation)
 
 ## Functions
 
@@ -46,3 +47,9 @@ The default is the StartScreen, it is changed to the QuestionsScreen if the '**s
 Another way of using and managing multiple screens with Flutter is by using the [Navigator](../DART_BASICS/classes.md#navigator). This class stacks the screens it receives as argument, making it easy to push and pop screens from this stack.
 
 To implement the Navigator, simply use the class in a function, activated when pressing buttons, to push or pop screens.
+
+## Tab-based Navigation
+
+Managing Screens can be done by a central widget, for instance, the widget that controls the tabs. This tab navigation will be responsible for loading the other screens, that are "embedded" to this tabs screen.
+
+Tabs are the area that oppose the AppBar, being that they are located not on the top, but on the bottom of the screen. This is a very common trait of apps, a place in which a user can easily switch between screens.
