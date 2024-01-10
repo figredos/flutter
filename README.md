@@ -29,3 +29,7 @@ flutter run {path_of_downloaded_file}
 - [Expense Tracker App:](expense_tracker_app) App that provides a simple way to track expenses. Created for understanding theming and user interactivity.
 
 - [meals_app:](meals_app) In development.
+
+## Text Files
+
+This repository contains a [Text Files](TEXT_FILES/) folder containing information on some Flutter concepts that were used when building this app. For more information follow this link to the [***'README.md'***](TEXT_FILES/README.md) file on the '***TEXT_FILES*** folder.
