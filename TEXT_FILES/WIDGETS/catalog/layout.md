@@ -11,6 +11,8 @@ Widgets that are responsible for arranging and positioning other widgets within 
     - [SingleChildScrollView](#singlechildscrollview)
     - [ListView](#listview)
     - [GridView](#gridview)
+  - [ListTile](#listtile)
+    - [SwitchListTile](#switchlisttile)
   - [Dismissible](#dismissible)
   - [LayoutBuilder](#layoutbuilder)
 
@@ -61,6 +63,24 @@ This delegate accepts some parameters:
 - mainAxisSpacing: mainAxisSpacing defines the space between the items in the main axis.
 
 - crossAxisSpacing: this parameter determines the space between the columns.
+
+## ListTile
+
+In Flutter the ListTile widget is a convenient and versatile widget designed specifically for displaying a single fixed-height row. It is commonly used in lists, such as in a [ListView](#listview) or a [Drawer](material_design.md#drawer) to represent individual items.
+
+Some of its key features:
+
+- Title and Subtitle: the ListTile widget typically consist of a title and and optional subtitle. The title represents the primary content, whereas the subtitle provides additional information on that item.
+
+- Leading and Trailing icons: this widget also allows the inclusion of items leading (left) and trailing (right) at the edges of the tile. 
+
+- Tap Interaction: the ListTile automatically responds to taps by changing its appearance to provide visual feedback to the user. This is done with an 'onTap' callback to handle tap events.
+
+### SwitchListTile
+
+SwitchListTile is a specific variation of ListTile designed to represent a toggle switch within a list. It is commonly used when you want to present an option that can be turned on or off, and the user can toggle the state by tapping on the list tile.
+
+Much like the widget it derives from, SwitchListTile has many parameters that can be set in order to adjust it to the dev's interest.
 
 ## Dismissible
 
