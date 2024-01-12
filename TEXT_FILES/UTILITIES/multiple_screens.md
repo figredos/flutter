@@ -1,11 +1,12 @@
 # Multiple screens
 
-Using multiple screens is a basic feature of apps in general. So, Flutter supports a couple of ways of creating multiple screens and switching between them.
+Using multiple screens is a basic feature of apps in general. So, Flutter supports a couple of ways of creating multiple screens and switching between them. This file goes over some of them, but also some useful features to help manage multiple-screens.
 
 - [Multiple screens](#multiple-screens)
   - [Functions](#functions)
   - [Navigator](#navigator)
   - [Tab-based Navigation](#tab-based-navigation)
+  - [Returning data when leaving the screen](#returning-data-when-leaving-the-screen)
 
 ## Functions
 
@@ -53,3 +54,9 @@ To implement the Navigator, simply use the class in a function, activated when p
 Managing Screens can be done by a central widget, for instance, the widget that controls the tabs. This tab navigation will be responsible for loading the other screens, that are "embedded" to this tabs screen.
 
 Tabs are the area that oppose the AppBar, being that they are located not on the top, but on the bottom of the screen. This is a very common trait of apps, a place in which a user can easily switch between screens.
+
+## Returning data when leaving the screen
+
+When dealing multiple screens, sometimes it may be necessary to deal with data across them, but this isn't always that simple. To deal with data from within a Navigator Flutter provides the [WillPopScope](../DART_BASICS/classes.md#willpopscope).
+
+More specifically, by using await just before calling the Navigator push. This navigator, in turn can be stored in a variable (given that there is a return) and the push (that is by default of generic type) can have its type set to what the expected data type is.e its type set to what the expected data type is.
