@@ -11,8 +11,10 @@ In this file, you can find implementations of basic feature using Dart classes, 
   - [Most notable dart classes](#most-notable-dart-classes)
     - [TextEditingController](#texteditingcontroller)
     - [Navigator](#navigator)
-      - [Navigator.push()](#navigatorpush)
-      - [Pop](#pop)
+      - [.push()](#push)
+      - [.pushReplacement](#pushreplacement)
+      - [.pop](#pop)
+      - [WillPopScope](#willpopscope)
       - [Navigator Stack](#navigator-stack)
       - [Named routes](#named-routes)
 
@@ -120,7 +122,7 @@ The Navigator class does not require a State to be reset in order to change scre
 
 Navigator functions as a stack, so when a new Screen is pushed, the Navigator class stacks that screen and when it pops it removes the top-most screen from the stack. The top-most screen is the one that is visible to the user, with the other ones are partially visible, if at all.
 
-#### Navigator.push()
+#### .push()
 
 This method is used to push a Screen onto the stack. When used, the main screen shows the top-most screen, in this case the one passed as a **route**. ```.push()``` requires the *context* and requires the previously mentioned route. Routes represent screens or pages on the app. Each route is associated with a widget that defines the content and behavior of that screen.
 
@@ -134,9 +136,21 @@ The route receives as an argument a **MaterialPageRoute** object. This type of o
 
 It is important to note that in Stateless *Widgets*, the **context** is not globally available.
 
-#### Pop
+#### .pushReplacement
+
+Navigation in Flutter works with a stack of screens (at least with the Navigator class). And it isn't always the best choice to keep on pushing more and more screens onto that stack. Flutter provides a solution, the **.pushReplacement** method.
+
+This method takes a route, and instead of pushing it onto the stack, it replaces the current route entirely. This means that users cannot navigate back to the previous screen using the back button or gesture because the previous screen is no longer part of the navigation stack.
+
+#### .pop
 
 You can "pop" the current route off the stack to go back to the previous screen.
+
+#### WillPopScope
+
+This is a utility widget that is used to intercept the back button press on the system's back navigation. It allows actions to be performed or show dialogs before actually popping a route from the navigation stack.
+
+The WillPopScope requires a 'onWillPop' parameter. This parameter sets a callback function, that in turn returns a ```Future<bool>``` in a callback function. A good way to deal with this Future object is with the use of the async and await keywords.
 
 #### Navigator Stack
 
@@ -144,4 +158,4 @@ The 'Navigator' maintains a stack of routes. When you push a new route onto the 
 
 #### Named routes
 
-Routes can be given names, making it easier to navigate to specific screens using a consistent identifier.
+Routes can be given names, making it easier to navigate to specific screens using a consistent identifier. This is not recommended.
