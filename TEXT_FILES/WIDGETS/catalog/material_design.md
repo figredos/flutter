@@ -6,6 +6,7 @@ Material design is a design Language created by Google that provides guidelines 
   - [MaterialApp](#materialapp)
   - [AppBar](#appbar)
   - [BottomNavigationBar](#bottomnavigationbar)
+  - [Drawer](#drawer)
   - [Button Widgets](#button-widgets)
     - [ElevatedButtons](#elevatedbuttons)
     - [TextButton](#textbutton)
@@ -42,6 +43,14 @@ The BottomNavigationBar is a Flutter widget that is typically used as a navigati
 This widget is a common UI element in mobile apps, allowing users to navigate between different sections of the app easily. It's often paired with a TabBarView or similar widgets to manage the content associated with each tab. It is set in the Scaffold widget by using the parameter '*bottomNavigationBar*'.
 
 This parameter receives an argument of type BottomNavigationBar. This in turn receives two major parameters, onTap, that sets the behavior when interacted with, items that receives objects of a BottomNavigationBarItem class (that receives an icon and a label), and currentIndex, that highlights the active tab.
+
+## Drawer
+
+Drawers are a slide-in menu or navigation panel that is typically hidden off-screen and can be revealed by swiping from the left (or right) edge of the screen or by tapping on a button or icon. It is a common UI pattern for providing navigation options in mobile applications.
+
+Implementing Drawers in Flutter can be done within the Scaffold widget, much like an [App](#appbar) or [Navigation](#bottomnavigationbar) bar, by using the '```drawer```' parameter. This parameter receives a Drawer value. 
+
+The Drawer widget provides a flexible structure for creating navigation panels and menus in Flutter applications. It is often associated with the [ListTile] widget.
 
 ## Button Widgets
 
