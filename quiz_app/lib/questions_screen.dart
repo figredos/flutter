@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:io';
 
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/answer_button.dart';
@@ -47,12 +48,27 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map(
               (answer) {
-                return AnswerButton(
-                  answerText: answer,
-                  onTap: () {
-                    answerQuestion(answer);
-                  },
-                );
+                if (Platform.isIOS || Platform.isIOS) {
+                  return AnswerButton(
+                    answerText: answer,
+                    onTap: () {
+                      answerQuestion(answer);
+                    },
+                  );
+                } else {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      AnswerButton(
+                        answerText: answer,
+                        onTap: () {
+                          answerQuestion(answer);
+                        },
+                      ),
+                      const SizedBox(height: 5),
+                    ],
+                  );
+                }
               },
             ),
           ],
