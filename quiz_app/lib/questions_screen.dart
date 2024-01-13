@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,7 +36,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
         margin: const EdgeInsets.all(40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               currentQuestion.text,
@@ -47,12 +49,27 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map(
               (answer) {
-                return AnswerButton(
-                  answerText: answer,
-                  onTap: () {
-                    answerQuestion(answer);
-                  },
-                );
+                if (Platform.isAndroid || Platform.isIOS) {
+                  return AnswerButton(
+                    answerText: answer,
+                    onTap: () {
+                      answerQuestion(answer);
+                    },
+                  );
+                } else {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      AnswerButton(
+                        answerText: answer,
+                        onTap: () {
+                          answerQuestion(answer);
+                        },
+                      ),
+                      const SizedBox(height: 5),
+                    ],
+                  );
+                }
               },
             ),
           ],
