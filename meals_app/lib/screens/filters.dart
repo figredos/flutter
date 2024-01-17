@@ -18,43 +18,44 @@ class FilterScreen extends ConsumerWidget {
       body: Column(
         children: [
           FilterSwitchTile(
-              value: activeFilter[Filter.glutenFree]!,
-              title: 'Glutten-free',
-              subtitle: 'Only include gluten-free meals.',
-              onSwitchTile: (isChecked) {
-                ref
-                    .read(filtersProvider.notifier)
-                    .setFilter(Filter.glutenFree, isChecked);
-              }),
+            value: activeFilter[Filter.glutenFree]!,
+            title: 'Glutten-free',
+            subtitle: 'Only include gluten-free meals.',
+            onSwitchTile: (isChecked) {
+              ref
+                  .read(filtersProvider.notifier)
+                  .setFilter(Filter.glutenFree, isChecked);
+            },
+          ),
           FilterSwitchTile(
             value: activeFilter[Filter.lactoseFree]!,
             title: 'Lactose-free',
             subtitle: 'Only include lactose-free meals.',
             onSwitchTile: (isChecked) {
-                ref
-                    .read(filtersProvider.notifier)
-                    .setFilter(Filter.lactoseFree, isChecked);
-              },
+              ref
+                  .read(filtersProvider.notifier)
+                  .setFilter(Filter.lactoseFree, isChecked);
+            },
           ),
           FilterSwitchTile(
             value: activeFilter[Filter.vegetarian]!,
             title: 'Vegetarian',
             subtitle: 'Only include vegetarian meals.',
             onSwitchTile: (isChecked) {
-                ref
-                    .read(filtersProvider.notifier)
-                    .setFilter(Filter.vegetarian, isChecked);
-              },
+              ref
+                  .read(filtersProvider.notifier)
+                  .setFilter(Filter.vegetarian, isChecked);
+            },
           ),
           FilterSwitchTile(
             value: activeFilter[Filter.vegan]!,
             title: 'Vegan',
             subtitle: 'Only include vegan meals.',
             onSwitchTile: (isChecked) {
-                ref
-                    .read(filtersProvider.notifier)
-                    .setFilter(Filter.vegan, isChecked);
-              },
+              ref
+                  .read(filtersProvider.notifier)
+                  .setFilter(Filter.vegan, isChecked);
+            },
           ),
         ],
       ),
