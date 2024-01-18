@@ -48,7 +48,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map(
               (answer) {
-                if (Platform.isIOS || Platform.isIOS) {
+                if (Platform.isAndroid || Platform.isIOS) {
                   return AnswerButton(
                     answerText: answer,
                     onTap: () {
