@@ -28,7 +28,7 @@ flutter run {path_of_downloaded_file}
 
 - [Expense Tracker App:](expense_tracker_app) App that provides a simple way to track expenses. Created for understanding theming and user interactivity.
 
-- [meals_app:](meals_app) App where user can find recipes, filter based on diet, and favorite meals. Created for understanding multi-screen apps, navigation, managing app-wide state, and animations.
+- [Meals app:](meals_app) App where user can find recipes, filter based on diet, and favorite meals. Created for understanding multi-screen apps, navigation, managing app-wide state, and animations.
 
 ## Text Files
 
