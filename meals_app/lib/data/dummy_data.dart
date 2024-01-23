@@ -62,9 +62,8 @@ const dummyMeals = [
     id: 'm1',
     categories: [
       'c1',
-      'c1',
-      'c6',
       'c2',
+      'c6',
     ],
     title: 'Spaghetti with Tomato Sauce',
     affordability: Affordability.affordable,
@@ -197,7 +196,7 @@ const dummyMeals = [
     categories: [
       'c1',
       'c2'
-          'c5',
+      'c5',
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
