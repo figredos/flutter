@@ -9,10 +9,12 @@ Dart is an object-oriented, class-based, garbage-collected language with C-style
   - [Trailing comma](#trailing-comma)
   - [Understanding types](#understanding-types)
   - [Formatting](#formatting)
-  - [const, final and var](#const-final-and-var)
-    - ["const" Values](#const-values)
-    - ["final" Values](#final-values)
-    - ["var" Values](#var-values)
+  - [Keywords](#keywords)
+    - ["const"](#const)
+    - ["final"](#final)
+    - ["var"](#var)
+    - ["late"](#late)
+    - ["with"](#with)
   - [Importing Features From Packages](#importing-features-from-packages)
   - [Context](#context)
   - [Futures](#futures)
@@ -72,25 +74,47 @@ Words in this format should not be separated with whitespace or underscore, inst
 
 Another formatting standard that should be followed is how to name objects. When naming an object, the intention should be, making it as clear as possible what that object does.
 
-## const, final and var
+## Keywords
 
-There are two keyword that indicate the immutability of a code, ***const*** and ***final***. The difference between the two is that const is more restrictive and is used for compile-time constant whereas finalis used for values that might be determined at runtime, but won't change after initialization. Final allows for more flexibility in terms of when and how the value is determined, making it suitable for a wider range of use cases compared to const.
+Dart, like many other programming languages has a set of keywords that perform various tasks, some of the most important are listed bellow.
 
-When using a final value in objects like lists, there are ways of adding values to the list. This happens because the value in-memory does not change, the list is still the same, with the only difference being the additional value. This wouldn't work if a whole new list was to be assigned to the variable. This behavior does not apply to the const keyword, that makes the values completely immutable. On the other hand, the var keywords allows both of the types of assignment.
-
-### "const" Values
+### "const"
 
 ***const*** is a keyword built into the Dart language that helps optimizing runtime performance. It does so because it prevents the reallocation of memory for a piece of code that doesn't change.
 
 When a variable is declared in a programming language, it's value is stored in the memory of the computer. When the code accesses that bit of code again, it usually allocates another part of the computer's memory for that code. When we use the "const" keyword, it stops the computer from allocating another part of the memory for the code that follows it.
 
-### "final" Values
+### "final"
 
 In Dart, the ***final*** keyword is used to declare that can be assigned a value only once. Once a value is assigned to a ***final*** variable, it cannot be changed. This keyword is often used for constants, configuration values, or variables that should not e reassigned during the runtime of the program.
 
-### "var" Values
+### "var"
 
 In Dart, the **var** keyword is used to declare a variable without explicitly specifying its type. Instead, the type of the variable is inferred from the type of the assigned value. Dart is statically-typed language, meaning that variable types are known at compile-time. However, Dart's type inference system allows you to use the **var** when the type can be determined without explicit declaration.
+
+### "late"
+
+In Flutter, the "late" keyword is used to defer the initialization of a non-nullable variable until later in the code. It essentially tells the compiler that you promise to assign a value to the variable before you use it, even though you haven't done so at the point of the declaration.
+
+This keyword is mainly used to avoid null safety errors. Since flutter enforces null-safety, non-nullable must be initialized before they are used. "late" allows the declaration of a non-nullable variable initially without a value, but with the guarantee that you will assign one before accessing it.
+
+Using the "late" operator may result in performance improvements, given that the variable will only be initialized when absolutely needed. It also helps avoiding unnecessary initialization in constructor or build methods, especially when the values come from asynchronous operations or user interactions, resulting in cleaner overall code.
+
+### "with"
+
+The with keyword is used to incorporate the functionality of one or more mixins into a class. Essentially, it allows the use of mixin classes, that carry additional feature without directly inheriting from those classes. This provides several benefits, such as code reuse, multiple inheritance alternatives (given that Flutter doesn't support multiple inheritance), and makes code more modular and cleaner.
+
+```dart
+class MyClass with MixinClass1, MixinClass2 {
+  ...
+}
+
+// Still works when already extending a class
+
+class MyClass extends StatelessWidget with MixinClass1, MixinClass2 {
+  ...
+}
+```
 
 ## Importing Features From Packages
 

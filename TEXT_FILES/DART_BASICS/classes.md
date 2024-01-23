@@ -8,6 +8,7 @@ In this file, you can find implementations of basic feature using Dart classes, 
   - [Getters \& Setters](#getters--setters)
     - [Getters](#getters)
     - [Setters](#setters)
+  - [Mixins](#mixins)
   - [Most notable dart classes](#most-notable-dart-classes)
     - [TextEditingController](#texteditingcontroller)
     - [Navigator](#navigator)
@@ -94,7 +95,15 @@ class MyClass {
 }
 ```
 
+## Mixins
+
+In object-oriented programming, a mixin is a class containing methods and behaviors that can be "mixed into" other classes without directly inheriting from it. Think of it like adding spices to a dish - they enhance the dish's flavor and functionality without becoming an inherent part of the dish itself.
+
+Their main purpose is code reuse, given they avoid duplicating common functionalities across multiple classes.
+
 ## Most notable dart classes
+
+Some of Dart's most useful and important classes.
 
 ### TextEditingController
 
