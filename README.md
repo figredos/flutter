@@ -10,15 +10,15 @@
 
 To run any of the apps, download the file with the corresponding name, launch a device emulator, navigate to the downloaded file in terminal (or copy its path) and run the following command:
 
-~~~shell
+```shell
 flutter run
-~~~
+```
 
 or
 
-~~~shell
+```shell
 flutter run {path_of_downloaded_file}
-~~~
+```
 
 ## Apps
 
@@ -28,7 +28,7 @@ flutter run {path_of_downloaded_file}
 
 - [Expense Tracker App:](expense_tracker_app) App that provides a simple way to track expenses. Created for understanding theming and user interactivity.
 
-- [meals_app:](meals_app) In development.
+- [meals_app:](meals_app) App where user can find recipes, filter based on diet, and favorite meals. Created for understanding multi-screen apps, navigation, managing app-wide state, and animations.
 
 ## Text Files
 
