@@ -3,7 +3,9 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class ImageInput extends StatefulWidget {
-  const ImageInput({super.key});
+  const ImageInput({super.key, required this.onPickImage});
+
+  final void Function(File image) onPickImage; 
 
   @override
   State<StatefulWidget> createState() {
@@ -14,10 +16,10 @@ class ImageInput extends StatefulWidget {
 class _ImageInputState extends State<ImageInput> {
   File? _selectedImage;
 
-  void takePicture() async {
+  void _takePicture() async {
     final imagePicker = ImagePicker();
     final pickedImage =
-        await imagePicker.pickImage(source: ImageSource.camera, maxWidth: 600);
+        await imagePicker.pickImage(source: ImageSource.gallery, maxWidth: 600);
 
     if (pickedImage == null) {
       return;
@@ -26,6 +28,8 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _selectedImage = File(pickedImage.path);
     });
+
+    widget.onPickImage(_selectedImage!);
   }
 
   @override
@@ -33,13 +37,18 @@ class _ImageInputState extends State<ImageInput> {
     Widget content = TextButton.icon(
       icon: const Icon(Icons.camera),
       label: const Text('Take Picture'),
-      onPressed: takePicture,
+      onPressed: _takePicture,
     );
 
     if (_selectedImage != null) {
-      content = Image.file(
-        _selectedImage!,
-        fit: BoxFit.cover,
+      content = GestureDetector(
+        onTap: _takePicture,
+        child: Image.file(
+          _selectedImage!,
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
       );
     }
 
@@ -52,10 +61,7 @@ class _ImageInputState extends State<ImageInput> {
       ),
       height: 250,
       width: double.infinity,
-      child: TextButton.icon(
-          onPressed: () {},
-          icon: const Icon(Icons.camera),
-          label: const Text('Take Picture')),
+      child: content,
     );
   }
 }
