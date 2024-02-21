@@ -32,6 +32,8 @@ flutter run {path_of_downloaded_file}
 
 - [Shopping List app:](shopping_list_app) App to make a shopping list easy and accessible. Users can insert the grocery's name, quantity and its type. App created to understand using the Form widget to handle user input, and implementing a simple backend.
 
+- [Favorite Places app:](favorite_places_app) App that allows users to add their favorite places with location and image.
+
 ## Text Files
 
 This repository contains a [Text Files](TEXT_FILES/) folder containing information on some Flutter concepts that were used when building this app. For more information follow this link to the [***'README.md'***](TEXT_FILES/README.md) file on the '***TEXT_FILES*** folder.

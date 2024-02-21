@@ -18,6 +18,17 @@ Here are some flutter packages used in this repo.
       - [Using providers](#using-providers)
         - [ref](#ref)
         - [ConsumerWidgets and ConsumerStatefulWidgets](#consumerwidgets-and-consumerstatefulwidgets)
+  - [Image Picker](#image-picker)
+    - [Configuring](#configuring)
+    - [Usage](#usage)
+  - [Location](#location)
+    - [Configuring](#configuring-1)
+    - [Usage](#usage-1)
+  - [Google Maps Flutter](#google-maps-flutter)
+    - [Configuring](#configuring-2)
+      - [Android](#android)
+      - [iOS](#ios)
+    - [Usage](#usage-2)
   - [Appendix](#appendix)
     - [MAC Address](#mac-address)
     - [SHA-1 hashing algorithm](#sha-1-hashing-algorithm)
@@ -202,6 +213,190 @@ class _MyConsumerState extends ConsumerState<MyConsumerStatefulWidget> {
     return MyWidget;
    }
 }
+```
+
+## Image Picker
+
+An essential part of apps is user interactivity. A simple way of doing so is by letting the user, for instance, pick images for such things as profile pics. There is no way of doing this with Flutter natively, therefore, to use the device's camera, use the `image_picker` package.
+
+`image_picker` is a plugin for iOS and Android for picking images from the image library and taking new pictures with the camera.
+
+Like other packages, to install it use `flutter pub add image_picker`.
+
+### Configuring
+
+In order to use this package, there are some additional configurations to be done in specific files. For instance, to have access to an iOS device's library, camera and microphone, the following configuration keys should be added to the `info.plist` file (`ios/runner/info.plist`):
+
+```plist
+<dict>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>{insert-usage-description}</string>
+  <key>NSCameraUsageDescription</key>
+  <string>{insert-usage-description}</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>{insert-usage-description}</string>
+  ...
+```
+
+### Usage
+
+To actually use the camera for photos, import `image_picker.dart` and instantiate `ImagePicker`. This creates an object that has multiple methods of picking video and photos. These methods require a source, and with `ImageSource.(...)` you can select what that source will be.
+
+Whichever method returns a Future, of type `XFile`. `XFile` is a file containing the image itself.
+
+```dart
+    final imagePicker = ImagePicker();
+    final pickedImage = await imagePicker.pickImage(source: ImageSource.gallery, maxWidth: 600);
+```
+
+In order to use the file yielded by the Future, `dart:io` is required. One this library is imported, the `File` class is available. This class is needed to transform the `XFile` object into a `File object`, this is done using the path of the `XFile` object.
+
+```dart
+final selectedImage = File(pickedImage.path);
+```
+
+The file image can be displayed using the `Image.file()` method like so:
+
+```dart
+Image.file(selectedImage)
+```
+
+## Location
+
+This plugin for Flutter handles getting a location on Android and iOS. It also provides callbacks when the location is changed.
+
+To install use `flutter pub add location`.
+
+### Configuring
+
+This package also requires additional configurations when using iOS, specifically, adding the usage of the location inside of the `Info.plist` file. There are 2 different types of usage description, `NSLocationAlwaysAndWhenInUseUsageDescription` for always using and `NSLocationWhenInUseUsageDescription` for when using.
+
+```plist
+<dict>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>{insert-usage-description}</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>{insert-usage-description}</string>
+  ...
+```
+
+### Usage
+
+The first thing to be done when using the location package is requesting a location. And to do so, it's important to check Location Service and Permission Status manually.
+
+```dart
+Location location = Location();
+
+bool servicesEnabled;
+PermissionStatus permissionGranted;
+LocationData locationData;
+
+servicesEnabled = await location.serviceEnabled();
+if (!servicesEnabled) {
+  servicesEnabled = await location.requestService();
+  if (!servicesEnabled) {
+    return;
+  }
+}
+
+permissionGranted = await location.hasPermission();
+if (permissionGranted == PermissionStatus.denied){
+  permissionGranted = await location.requestPermission();
+  if (permissionGranted != PermissionStatus.granted) {
+    return;
+  }
+}
+
+locationData = await location.getLocation();
+```
+
+This `locationData` object offers a plethora of methods with regards of the location of the device, such as its latitude and longitude.
+
+```dart
+final lat = locationData.latitude;
+final lng = locationData.longitude;
+```
+
+## Google Maps Flutter
+
+Google Maps Flutter is a Flutter plugin that provides a `GoogleMaps` widget, allowing the app to open Google Maps and interact with it.
+
+To install this package use `flutter pub add google_maps_flutter`.
+
+### Configuring
+
+This package requires some configuration, both on iOS and Android.
+
+#### Android
+
+To set up the app for Android devices, the first thing to be done should be in the `android/app/build.gradle` file.`minSdkVersion` should  be changed from `minSdkVersion flutter.targetSdkVersion` to  `minSdkVersion 20`.
+
+Next, in the `android/app/src/main/AndroidManifest.xml`, bellow application, the following key should be added, and the API key should be added as a value in `android:value`.
+
+```xml
+<\meta-data android:name="com.google.android.geo.API_KEY" android:value="{YOUR KEY HERE}"/>
+```
+
+#### iOS
+
+Setting up iOS devices is a little bit simpler. In the `ios/Runner/AppDelegate.swift` file, add the following lines:
+
+```swift
+import GoogleMaps
+
+//and 
+
+GMSServices.provideAPIKey("{YOUR KEY}")
+```
+
+Like the following:
+
+```dart
+import UIKit
+import Flutter
+import GoogleMaps
+
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+  ) -> Bool {
+    GMSServices.provideAPIKey("{YOUR KEY}")
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+}
+```
+
+### Usage
+
+The usage of the Google Maps package basically comes down to using the `GoogleMap()` widget.
+
+This widget has a parameter for an `initialCameraPosition` that will represent the initial position of the map's camera. This parameter, in turn, takes an argument of type `CameraPosition` this object creates a immutable representation of a google maps camera.
+
+In this object we need to set the `LatLng` parameter with a value for latitude and a longitude respectively. Another parameter to be set is the zoom, that takes a double value for the amount of zoom to be applied in the camera.
+
+Another parameter to be set in the GoogleMap object should be `markers`. This parameter takes a set object containing `Marker` objects.
+
+Each marker object takes an id and a position. The id should be a unique identifier and the position should be a `LatLng` object.
+
+Finally, the `GoogleMap` widget also has an `onTap` parameter, that handles user's interactions. This argument takes a `Function` with a position argument that represents the selected location in the map as a `LatLng` object.
+
+```dart
+GoogleMap(
+        onTap: (position) {},
+        initialCameraPosition: CameraPosition(
+          target: LatLng(latitude, longitude),
+          zoom: 16,
+        ),
+        markers: {
+          Marker(
+            markerId: const MarkerId('m1'),
+            position: LatLng(latitude, longitude),
+          ),
+        },
+      ),
 ```
 
 ## Appendix
