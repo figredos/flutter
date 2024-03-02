@@ -31,7 +31,7 @@ class App extends StatelessWidget {
       ),
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
+        builder: (ctx, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const SplashScreen();
           }
@@ -39,8 +39,7 @@ class App extends StatelessWidget {
             return const ChatScreen();
           }
           return const AuthScreen();
-        },
-      ),
+        },),
     );
   }
 }
